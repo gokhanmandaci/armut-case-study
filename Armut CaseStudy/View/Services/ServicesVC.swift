@@ -44,9 +44,9 @@ extension ServicesVC {
                                  forCellWithReuseIdentifier: AllServicesItem.reuseId)
         
         /// Popular Services registration
-        let popularServiceItem = UINib(nibName: Nibs.PopularCellView, bundle: nil)
-        collectionView!.register(popularServiceItem,
-                                 forCellWithReuseIdentifier: PopularCell.reuseId)
+        let horizontalListItem = UINib(nibName: Nibs.HorizontalListView, bundle: nil)
+        collectionView!.register(horizontalListItem,
+                                 forCellWithReuseIdentifier: HorizontalList.reuseId)
         
         layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         layout.minimumLineSpacing = 10
@@ -78,27 +78,32 @@ extension ServicesVC: UICollectionViewDelegateFlowLayout {
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         /// Check types before decide which type of cell to draw.
         /// We have service type and post type.
-        if let serviceItems = servicesVM.services[indexPath.section].values.first,
-           let serviceItem = serviceItems[indexPath.row] as? Service {
-            /// First all services and then populars
-            if indexPath.section == 1 {
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AllServicesItem.reuseId,
-                                                                    for: indexPath) as? AllServicesItem else { return UICollectionViewCell() }
-                cell.setCell(serviceItem)
-                return cell
-            } else {
-                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PopularCell.reuseId,
-                                                                    for: indexPath) as? PopularCell else { return UICollectionViewCell() }
-                
+        if let serviceItems = servicesVM.services[indexPath.section].values.first {
+            if let serviceItem = serviceItems[indexPath.row] as? Service {
+                /// First all services and then horizontal lists
+                if indexPath.section == 1 {
+                    guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AllServicesItem.reuseId,
+                                                                        for: indexPath) as? AllServicesItem else { return UICollectionViewCell() }
+                    cell.setCell(serviceItem)
+                    return cell
+                }
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HorizontalList.reuseId,
+                                                                    for: indexPath) as? HorizontalList else { return UICollectionViewCell() }
                 if let popularServices = serviceItems as? [Service] {
-                    cell.setCell(popularServices)
+                    cell.setCell(for: popularServices)
+                }
+                return cell
+            } else if serviceItems[indexPath.row] is Post {
+                guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HorizontalList.reuseId,
+                                                                    for: indexPath) as? HorizontalList else { return UICollectionViewCell() }
+                if let posts = serviceItems as? [Post] {
+                    cell.setCell(for: posts)
                 }
                 return cell
             }
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-                        
         return cell
     }
     
@@ -108,7 +113,11 @@ extension ServicesVC: UICollectionViewDelegateFlowLayout {
             let dimen = (Helper.getWidth() - ((3 * 10) + (2 * 20))) / 4
             return CGSize(width: dimen, height: dimen)
         } else {
-            return CGSize(width: Helper.getWidth(), height: 140)
+            if indexPath.section == 2 {
+                return CGSize(width: Helper.getWidth(), height: 140)
+            } else {
+                return CGSize(width: Helper.getWidth(), height: 200)
+            }
         }
     }
     
@@ -122,8 +131,8 @@ extension ServicesVC: UICollectionViewDelegateFlowLayout {
                 return headerView
             } else {
                 if let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                                       withReuseIdentifier: SectionHeader.reuseId,
-                                                                                       for: indexPath) as? SectionHeader {
+                                                                                withReuseIdentifier: SectionHeader.reuseId,
+                                                                                for: indexPath) as? SectionHeader {
                     if indexPath.section == 1 {
                         header.lblTitle.font = UIFont.boldSystemFont(ofSize: 14)
                     } else {
@@ -132,6 +141,12 @@ extension ServicesVC: UICollectionViewDelegateFlowLayout {
                     header.lblTitle.text = servicesVM.services[indexPath.section].keys.first ?? ""
                     return header
                 }
+            }
+        } else if kind == UICollectionView.elementKindSectionFooter {
+            if let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                            withReuseIdentifier: SectionFooter.reuseId,
+                                                                            for: indexPath) as? SectionFooter {
+                return footer
             }
         }
         
@@ -146,8 +161,8 @@ extension ServicesVC: UICollectionViewDelegateFlowLayout {
             let indexPath = IndexPath(row: 0, section: section)
             /// We get the header item.
             let servicesHeader = self.collectionView(collectionView,
-                                                      viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader,
-                                                      at: indexPath)
+                                                     viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader,
+                                                     at: indexPath)
             
             // Here with systemLayoutSizeFitting our header size will be dynamic
             // because we used auto-layout and bind the boundaries.
@@ -161,6 +176,13 @@ extension ServicesVC: UICollectionViewDelegateFlowLayout {
         } else {
             return CGSize(width: Helper.getWidth(), height: 90)
         }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        if section == servicesVM.services.count - 1 {
+            return CGSize(width: Helper.getWidth(), height: 100)
+        }
+        return .zero
     }
 }
 

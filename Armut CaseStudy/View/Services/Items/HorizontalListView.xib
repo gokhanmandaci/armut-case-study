@@ -10,17 +10,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="popularCellViewReuseId" id="fbg-uo-fa0" customClass="PopularCell" customModule="Armut_CaseStudy" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="horizontalListViewReuseId" id="Clz-lO-fRW" customClass="HorizontalList" customModule="Armut_CaseStudy" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gW6-q2-XFC">
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="5H2-gs-HZe">
                 <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
-                <autoresizingMask key="autoresizingMask"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Krw-U7-4O8">
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6ig-8J-PjZ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="141"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PSF-sh-XTj">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gjX-HF-vzf">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -29,15 +29,15 @@
                     </collectionView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" secondItem="Krw-U7-4O8" secondAttribute="bottom" id="0SF-4a-lcV"/>
-                    <constraint firstItem="Krw-U7-4O8" firstAttribute="top" secondItem="gW6-q2-XFC" secondAttribute="top" id="ICE-pD-LoF"/>
-                    <constraint firstItem="Krw-U7-4O8" firstAttribute="leading" secondItem="gW6-q2-XFC" secondAttribute="leading" id="fwM-JJ-CWY"/>
-                    <constraint firstAttribute="trailing" secondItem="Krw-U7-4O8" secondAttribute="trailing" id="nVu-eO-A2y"/>
+                    <constraint firstItem="6ig-8J-PjZ" firstAttribute="leading" secondItem="5H2-gs-HZe" secondAttribute="leading" id="XbD-Sn-ra8"/>
+                    <constraint firstAttribute="trailing" secondItem="6ig-8J-PjZ" secondAttribute="trailing" id="dKE-4m-Hgs"/>
+                    <constraint firstAttribute="bottom" secondItem="6ig-8J-PjZ" secondAttribute="bottom" id="ebO-2g-Lri"/>
+                    <constraint firstItem="6ig-8J-PjZ" firstAttribute="top" secondItem="5H2-gs-HZe" secondAttribute="top" id="n2y-2O-jD4"/>
                 </constraints>
             </collectionViewCellContentView>
             <size key="customSize" width="375" height="141"/>
             <connections>
-                <outlet property="clvPopulars" destination="Krw-U7-4O8" id="qeE-JX-bbA"/>
+                <outlet property="clvList" destination="6ig-8J-PjZ" id="HfA-il-c8D"/>
             </connections>
             <point key="canvasLocation" x="107" y="76"/>
         </collectionViewCell>

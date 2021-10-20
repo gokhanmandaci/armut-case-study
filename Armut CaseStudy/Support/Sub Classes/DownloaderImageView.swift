@@ -28,10 +28,10 @@ class DownloaderImageView: UIImageView {
                 ], progressBlock: nil) { (result) in
                 switch result {
                 case .success(_):
-                    //                    print("Task done for: \(value.source.url?.absoluteString ?? "")")
+//                    print("Task done for: \(value.source.url?.absoluteString ?? "")")
                     break
                 case .failure(_):
-                    //                    print("Job failed: \(error.localizedDescription)")
+//                    print("Job failed: \(error.localizedDescription)")
                     break
                 }
             }

@@ -35,7 +35,7 @@ class ServicesVM {
                     strongSelf.services.append(["Main Header" : []])
                     strongSelf.services.append(["All services" : servicesResponse.allServices])
                     strongSelf.services.append(["Popular these days" : servicesResponse.popular])
-//                    strongSelf.services.append(["Latests from the blog" : servicesResponse.posts])
+                    strongSelf.services.append(["Latests from the blog" : servicesResponse.posts])
                     strongSelf.delegate?.fetched(nil)
                 } catch {
 //                    Helper.showBasicServerError()

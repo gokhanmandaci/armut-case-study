@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="blogItemViewReuseId" id="BWb-IB-muj" customClass="BlogItem" customModule="Armut_CaseStudy" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="rX3-C0-caa">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iUB-6C-W3o" customClass="DownloaderImageView" customModule="Armut_CaseStudy" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="200"/>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="calibratedRGB"/>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="fEB-dR-I4m">
+                        <rect key="frame" x="8" y="138" width="134" height="52"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EV DEKORASYONU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lZ-vj-G6V">
+                                <rect key="frame" x="0.0" y="0.0" width="134" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ev dekorasyonunda mercan rengi devrimi" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVx-YO-zZl">
+                                <rect key="frame" x="0.0" y="20.5" width="134" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="fEB-dR-I4m" firstAttribute="leading" secondItem="rX3-C0-caa" secondAttribute="leading" constant="8" id="CIo-iv-GeU"/>
+                    <constraint firstAttribute="trailing" secondItem="iUB-6C-W3o" secondAttribute="trailing" id="L4c-8N-848"/>
+                    <constraint firstAttribute="trailing" secondItem="fEB-dR-I4m" secondAttribute="trailing" constant="8" id="LWq-7V-TS8"/>
+                    <constraint firstItem="iUB-6C-W3o" firstAttribute="top" secondItem="rX3-C0-caa" secondAttribute="top" id="RJv-3c-GG6"/>
+                    <constraint firstItem="iUB-6C-W3o" firstAttribute="leading" secondItem="rX3-C0-caa" secondAttribute="leading" id="UQb-UT-7ZJ"/>
+                    <constraint firstAttribute="bottom" secondItem="fEB-dR-I4m" secondAttribute="bottom" constant="10" id="bRG-X8-D1b"/>
+                    <constraint firstAttribute="bottom" secondItem="iUB-6C-W3o" secondAttribute="bottom" id="cRo-Zb-5fD"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="150" height="200"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <integer key="value" value="4"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="imgBlog" destination="iUB-6C-W3o" id="ZtV-MN-SSb"/>
+                <outlet property="lblBlogCategory" destination="8lZ-vj-G6V" id="doP-EG-zly"/>
+                <outlet property="lblBlogTitle" destination="jVx-YO-zZl" id="03P-7f-z17"/>
+            </connections>
+            <point key="canvasLocation" x="-37.681159420289859" y="125.22321428571428"/>
+        </collectionViewCell>
+    </objects>
+</document>
