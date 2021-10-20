@@ -9,4 +9,7 @@ import Foundation
 
 struct Nibs {
     static let ServicesHeader = "ServicesHeader"
+    static let AllServicesItemView = "AllServicesItemView"
+    static let PopularCellView = "PopularCellView"
+    static let PopularItemView = "PopularItemView"
 }

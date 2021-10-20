@@ -13,4 +13,8 @@ class AppConstants {
     
     /// Root URL
     let root = "https://my-json-server.typicode.com/"
+    /// Holds device width
+    var deviceWidth = 0
+    /// Holds device height
+    var deviceHeight = 0
 }
