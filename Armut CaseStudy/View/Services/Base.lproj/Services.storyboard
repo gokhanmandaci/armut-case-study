@@ -18,13 +18,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GJW-EN-QSy">
                             <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="servicesCell" id="p0V-ua-pe9">
-                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                <rect key="frame" x="0.0" y="50" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="sGi-xz-3k7">
                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
@@ -32,6 +32,26 @@
                                 </collectionViewCellContentView>
                             </collectionViewCell>
                         </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="sectionHeaderReuseId" id="2tm-K8-0R1" customClass="SectionHeader" customModule="Armut_CaseStudy" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All services bbbb" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugS-cl-cXL">
+                                    <rect key="frame" x="20" y="17" width="119" height="17"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                    <color key="textColor" red="0.070744954050000003" green="0.073602832849999994" blue="0.12549650670000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottomMargin" secondItem="ugS-cl-cXL" secondAttribute="bottom" constant="8" id="Rhm-zg-eNn"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ugS-cl-cXL" secondAttribute="trailing" constant="20" id="rRC-YY-sFh"/>
+                                <constraint firstItem="ugS-cl-cXL" firstAttribute="leading" secondItem="2tm-K8-0R1" secondAttribute="leading" constant="20" id="w2e-cm-PyH"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="lblTitle" destination="ugS-cl-cXL" id="rRc-fy-dWa"/>
+                            </connections>
+                        </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="vDA-cv-bGl" id="4JB-rE-Tg3"/>
                             <outlet property="delegate" destination="vDA-cv-bGl" id="hBf-Lp-iZS"/>
