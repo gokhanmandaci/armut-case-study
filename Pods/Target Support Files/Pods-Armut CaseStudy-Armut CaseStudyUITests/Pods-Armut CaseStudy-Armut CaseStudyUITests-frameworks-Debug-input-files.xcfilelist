@@ -1,0 +1,8 @@
+${PODS_ROOT}/Target Support Files/Pods-Armut CaseStudy-Armut CaseStudyUITests/Pods-Armut CaseStudy-Armut CaseStudyUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
+${BUILT_PRODUCTS_DIR}/CocoaDebug/CocoaDebug.framework
+${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework
+${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
+${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
+${BUILT_PRODUCTS_DIR}/SVGKit/SVGKit.framework
+${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework

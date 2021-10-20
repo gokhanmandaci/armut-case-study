@@ -7,15 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1083F2C9369E1C08B07D007F /* Pods_Armut_CaseStudy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51F1E8837B4DAD5C4248E845 /* Pods_Armut_CaseStudy.framework */; };
+		4A3554E98329463B2657C5E8 /* Pods_Armut_CaseStudyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7463A2FA99C7754E1D0472F8 /* Pods_Armut_CaseStudyTests.framework */; };
+		992A353D27203A4F000D212D /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A353C27203A4F000D212D /* Services.swift */; };
+		992A353F27203BD7000D212D /* ServiceDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A353E27203BD7000D212D /* ServiceDetail.swift */; };
+		992A354427203DDE000D212D /* ServicesHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 992A354327203DDE000D212D /* ServicesHeader.xib */; };
+		992A3546272045B6000D212D /* ServicesHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A3545272045B6000D212D /* ServicesHeader.swift */; };
+		992A354827204668000D212D /* ServicesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A354727204668000D212D /* ServicesVC.swift */; };
+		992A354A27204FD1000D212D /* Nibs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A354927204FD1000D212D /* Nibs.swift */; };
 		99C72C51272033BF00F901B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C72C50272033BF00F901B0 /* AppDelegate.swift */; };
 		99C72C53272033BF00F901B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C72C52272033BF00F901B0 /* SceneDelegate.swift */; };
-		99C72C55272033BF00F901B0 /* ServicesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C72C54272033BF00F901B0 /* ServicesVC.swift */; };
 		99C72C58272033BF00F901B0 /* Services.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99C72C56272033BF00F901B0 /* Services.storyboard */; };
 		99C72C5A272033C800F901B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99C72C59272033C800F901B0 /* Assets.xcassets */; };
 		99C72C5D272033C800F901B0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99C72C5B272033C800F901B0 /* LaunchScreen.storyboard */; };
 		99C72C68272033C800F901B0 /* Armut_CaseStudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C72C67272033C800F901B0 /* Armut_CaseStudyTests.swift */; };
 		99C72C72272033C800F901B0 /* Armut_CaseStudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C72C71272033C800F901B0 /* Armut_CaseStudyUITests.swift */; };
 		99C72C74272033C800F901B0 /* Armut_CaseStudyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C72C73272033C800F901B0 /* Armut_CaseStudyUITestsLaunchTests.swift */; };
+		B565DC4D2C4E4B5DB838BB18 /* Pods_Armut_CaseStudy_Armut_CaseStudyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2CEC05C7D78A19429EE33C0 /* Pods_Armut_CaseStudy_Armut_CaseStudyUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +44,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09BB773E9E46217F63799E71 /* Pods-Armut CaseStudyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Armut CaseStudyTests.release.xcconfig"; path = "Target Support Files/Pods-Armut CaseStudyTests/Pods-Armut CaseStudyTests.release.xcconfig"; sourceTree = "<group>"; };
+		28040CD999E0D1D7702428C1 /* Pods-Armut CaseStudy-Armut CaseStudyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Armut CaseStudy-Armut CaseStudyUITests.debug.xcconfig"; path = "Target Support Files/Pods-Armut CaseStudy-Armut CaseStudyUITests/Pods-Armut CaseStudy-Armut CaseStudyUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		51F1E8837B4DAD5C4248E845 /* Pods_Armut_CaseStudy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Armut_CaseStudy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C144B8444DDD13D14C03A75 /* Pods-Armut CaseStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Armut CaseStudy.debug.xcconfig"; path = "Target Support Files/Pods-Armut CaseStudy/Pods-Armut CaseStudy.debug.xcconfig"; sourceTree = "<group>"; };
+		7463A2FA99C7754E1D0472F8 /* Pods_Armut_CaseStudyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Armut_CaseStudyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7B8050D76B0A00881324470E /* Pods-Armut CaseStudy-Armut CaseStudyUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Armut CaseStudy-Armut CaseStudyUITests.release.xcconfig"; path = "Target Support Files/Pods-Armut CaseStudy-Armut CaseStudyUITests/Pods-Armut CaseStudy-Armut CaseStudyUITests.release.xcconfig"; sourceTree = "<group>"; };
+		895A9F05CCBA4E0117601A43 /* Pods-Armut CaseStudy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Armut CaseStudy.release.xcconfig"; path = "Target Support Files/Pods-Armut CaseStudy/Pods-Armut CaseStudy.release.xcconfig"; sourceTree = "<group>"; };
+		992A353C27203A4F000D212D /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		992A353E27203BD7000D212D /* ServiceDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetail.swift; sourceTree = "<group>"; };
+		992A354327203DDE000D212D /* ServicesHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ServicesHeader.xib; sourceTree = "<group>"; };
+		992A3545272045B6000D212D /* ServicesHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesHeader.swift; sourceTree = "<group>"; };
+		992A354727204668000D212D /* ServicesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesVC.swift; sourceTree = "<group>"; };
+		992A354927204FD1000D212D /* Nibs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Nibs.swift; sourceTree = "<group>"; };
 		99C72C4D272033BF00F901B0 /* Armut CaseStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Armut CaseStudy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99C72C50272033BF00F901B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99C72C52272033BF00F901B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		99C72C54272033BF00F901B0 /* ServicesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServicesVC.swift; sourceTree = "<group>"; };
 		99C72C57272033BF00F901B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Services.storyboard; sourceTree = "<group>"; };
 		99C72C59272033C800F901B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		99C72C5C272033C800F901B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +69,8 @@
 		99C72C6D272033C800F901B0 /* Armut CaseStudyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Armut CaseStudyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99C72C71272033C800F901B0 /* Armut_CaseStudyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Armut_CaseStudyUITests.swift; sourceTree = "<group>"; };
 		99C72C73272033C800F901B0 /* Armut_CaseStudyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Armut_CaseStudyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BD4D741EB42494344A87F99E /* Pods-Armut CaseStudyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Armut CaseStudyTests.debug.xcconfig"; path = "Target Support Files/Pods-Armut CaseStudyTests/Pods-Armut CaseStudyTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F2CEC05C7D78A19429EE33C0 /* Pods_Armut_CaseStudy_Armut_CaseStudyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Armut_CaseStudy_Armut_CaseStudyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1083F2C9369E1C08B07D007F /* Pods_Armut_CaseStudy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A3554E98329463B2657C5E8 /* Pods_Armut_CaseStudyTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +94,62 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B565DC4D2C4E4B5DB838BB18 /* Pods_Armut_CaseStudy_Armut_CaseStudyUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		48212586FBD4EA7C304E14FC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5C144B8444DDD13D14C03A75 /* Pods-Armut CaseStudy.debug.xcconfig */,
+				895A9F05CCBA4E0117601A43 /* Pods-Armut CaseStudy.release.xcconfig */,
+				28040CD999E0D1D7702428C1 /* Pods-Armut CaseStudy-Armut CaseStudyUITests.debug.xcconfig */,
+				7B8050D76B0A00881324470E /* Pods-Armut CaseStudy-Armut CaseStudyUITests.release.xcconfig */,
+				BD4D741EB42494344A87F99E /* Pods-Armut CaseStudyTests.debug.xcconfig */,
+				09BB773E9E46217F63799E71 /* Pods-Armut CaseStudyTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		740C219423876AAEBF0A6334 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				51F1E8837B4DAD5C4248E845 /* Pods_Armut_CaseStudy.framework */,
+				F2CEC05C7D78A19429EE33C0 /* Pods_Armut_CaseStudy_Armut_CaseStudyUITests.framework */,
+				7463A2FA99C7754E1D0472F8 /* Pods_Armut_CaseStudyTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		992A354027203CB1000D212D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				992A354227203CC9000D212D /* Header */,
+				99C72C56272033BF00F901B0 /* Services.storyboard */,
+				992A354727204668000D212D /* ServicesVC.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		992A354127203CBB000D212D /* Service Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Service Detail";
+			sourceTree = "<group>";
+		};
+		992A354227203CC9000D212D /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				992A3545272045B6000D212D /* ServicesHeader.swift */,
+				992A354327203DDE000D212D /* ServicesHeader.xib */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		99C72C44272033BF00F901B0 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +157,8 @@
 				99C72C66272033C800F901B0 /* Armut CaseStudyTests */,
 				99C72C70272033C800F901B0 /* Armut CaseStudyUITests */,
 				99C72C4E272033BF00F901B0 /* Products */,
+				48212586FBD4EA7C304E14FC /* Pods */,
+				740C219423876AAEBF0A6334 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -131,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				99C72C59272033C800F901B0 /* Assets.xcassets */,
+				992A354927204FD1000D212D /* Nibs.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -145,8 +222,8 @@
 		99C72C822720344000F901B0 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				99C72C54272033BF00F901B0 /* ServicesVC.swift */,
-				99C72C56272033BF00F901B0 /* Services.storyboard */,
+				992A354027203CB1000D212D /* Services */,
+				992A354127203CBB000D212D /* Service Detail */,
 				99C72C5B272033C800F901B0 /* LaunchScreen.storyboard */,
 			);
 			path = View;
@@ -164,6 +241,8 @@
 		99C72C852720367E00F901B0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				992A353C27203A4F000D212D /* Services.swift */,
+				992A353E27203BD7000D212D /* ServiceDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,9 +261,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99C72C77272033C800F901B0 /* Build configuration list for PBXNativeTarget "Armut CaseStudy" */;
 			buildPhases = (
+				92DB969DD5F1137E0288F430 /* [CP] Check Pods Manifest.lock */,
 				99C72C49272033BF00F901B0 /* Sources */,
 				99C72C4A272033BF00F901B0 /* Frameworks */,
 				99C72C4B272033BF00F901B0 /* Resources */,
+				D0D5ED12F14D16F6350F2037 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -199,9 +280,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99C72C7A272033C800F901B0 /* Build configuration list for PBXNativeTarget "Armut CaseStudyTests" */;
 			buildPhases = (
+				C36118B97085348C3359D8F2 /* [CP] Check Pods Manifest.lock */,
 				99C72C5F272033C800F901B0 /* Sources */,
 				99C72C60272033C800F901B0 /* Frameworks */,
 				99C72C61272033C800F901B0 /* Resources */,
+				36CBDE106E0CD58A303DCDFC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,9 +300,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 99C72C7D272033C800F901B0 /* Build configuration list for PBXNativeTarget "Armut CaseStudyUITests" */;
 			buildPhases = (
+				C7FF22BCFC4A63DA5EC17881 /* [CP] Check Pods Manifest.lock */,
 				99C72C69272033C800F901B0 /* Sources */,
 				99C72C6A272033C800F901B0 /* Frameworks */,
 				99C72C6B272033C800F901B0 /* Resources */,
+				1B32121F1EAF3A64AA2A4E9B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -279,6 +364,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				992A354427203DDE000D212D /* ServicesHeader.xib in Resources */,
 				99C72C5D272033C800F901B0 /* LaunchScreen.storyboard in Resources */,
 				99C72C5A272033C800F901B0 /* Assets.xcassets in Resources */,
 				99C72C58272033BF00F901B0 /* Services.storyboard in Resources */,
@@ -301,13 +387,137 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1B32121F1EAF3A64AA2A4E9B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Armut CaseStudy-Armut CaseStudyUITests/Pods-Armut CaseStudy-Armut CaseStudyUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Armut CaseStudy-Armut CaseStudyUITests/Pods-Armut CaseStudy-Armut CaseStudyUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Armut CaseStudy-Armut CaseStudyUITests/Pods-Armut CaseStudy-Armut CaseStudyUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		36CBDE106E0CD58A303DCDFC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Armut CaseStudyTests/Pods-Armut CaseStudyTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Armut CaseStudyTests/Pods-Armut CaseStudyTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Armut CaseStudyTests/Pods-Armut CaseStudyTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		92DB969DD5F1137E0288F430 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Armut CaseStudy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C36118B97085348C3359D8F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Armut CaseStudyTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7FF22BCFC4A63DA5EC17881 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Armut CaseStudy-Armut CaseStudyUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D0D5ED12F14D16F6350F2037 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Armut CaseStudy/Pods-Armut CaseStudy-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Armut CaseStudy/Pods-Armut CaseStudy-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Armut CaseStudy/Pods-Armut CaseStudy-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		99C72C49272033BF00F901B0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99C72C55272033BF00F901B0 /* ServicesVC.swift in Sources */,
+				992A353F27203BD7000D212D /* ServiceDetail.swift in Sources */,
+				992A3546272045B6000D212D /* ServicesHeader.swift in Sources */,
+				992A353D27203A4F000D212D /* Services.swift in Sources */,
+				992A354A27204FD1000D212D /* Nibs.swift in Sources */,
 				99C72C51272033BF00F901B0 /* AppDelegate.swift in Sources */,
+				992A354827204668000D212D /* ServicesVC.swift in Sources */,
 				99C72C53272033BF00F901B0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,6 +692,7 @@
 		};
 		99C72C78272033C800F901B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C144B8444DDD13D14C03A75 /* Pods-Armut CaseStudy.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -510,6 +721,7 @@
 		};
 		99C72C79272033C800F901B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 895A9F05CCBA4E0117601A43 /* Pods-Armut CaseStudy.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -538,8 +750,9 @@
 		};
 		99C72C7B272033C800F901B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD4D741EB42494344A87F99E /* Pods-Armut CaseStudyTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -563,8 +776,9 @@
 		};
 		99C72C7C272033C800F901B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09BB773E9E46217F63799E71 /* Pods-Armut CaseStudyTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -588,8 +802,9 @@
 		};
 		99C72C7E272033C800F901B0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28040CD999E0D1D7702428C1 /* Pods-Armut CaseStudy-Armut CaseStudyUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 97KF97383Y;
@@ -611,8 +826,9 @@
 		};
 		99C72C7F272033C800F901B0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7B8050D76B0A00881324470E /* Pods-Armut CaseStudy-Armut CaseStudyUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 97KF97383Y;
