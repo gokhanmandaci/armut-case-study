@@ -5,7 +5,7 @@ def defaultPods
   pod 'Moya', '~> 15.0'
   pod 'Kingfisher', '~> 7.0'
   pod 'SVProgressHUD'
-  pod 'SVGKit'
+  pod 'SwiftSVG', '~> 2.0'
   pod 'CocoaDebug', :configurations => ['Debug']
 end
 

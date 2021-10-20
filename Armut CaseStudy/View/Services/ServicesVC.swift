@@ -6,10 +6,12 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 class ServicesVC: UICollectionViewController {
     // MARK: - Parameters
     private let reuseIdentifier = "servicesCell"
+    private let servicesVM = ServicesVM()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +23,10 @@ class ServicesVC: UICollectionViewController {
         collectionView!.register(nibHeader,
                                  forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                  withReuseIdentifier: ServicesHeader.reuseId)
+        
+        servicesVM.delegate = self
+        SVProgressHUD.show()
+        servicesVM.fetch()
     }
 }
 
@@ -28,11 +34,14 @@ class ServicesVC: UICollectionViewController {
 extension ServicesVC: UICollectionViewDelegateFlowLayout {
     // MARK: - UICollectionView DataSource Methods
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return servicesVM.services.count
     }
     
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if let values = servicesVM.services[section].values.first {
+            return values.count
+        }
         return 0
     }
     
@@ -72,5 +81,17 @@ extension ServicesVC: UICollectionViewDelegateFlowLayout {
                                                           verticalFittingPriority: .fittingSizeLevel)
         }
         return .zero
+    }
+}
+
+// MARK: - Services View Model Methods
+extension ServicesVC: ServicesDelegate {
+    func fetched(_ error: Error?) {
+        SVProgressHUD.dismiss()
+        if let error = error {
+            print(error.localizedDescription)
+        } else {
+            collectionView!.reloadData()
+        }
     }
 }
