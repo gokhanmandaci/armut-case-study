@@ -6,6 +6,11 @@
 //
 
 import UIKit
+import SafariServices
+
+protocol HorizontalListDelegate {
+    func blogPost(with link: String)
+}
 
 class HorizontalList: UICollectionViewCell {
     // MARK: - Parameters
@@ -13,6 +18,7 @@ class HorizontalList: UICollectionViewCell {
     var populars: [Service]?
     var posts: [Post]?
     private let layout = UICollectionViewFlowLayout()
+    var delegate: HorizontalListDelegate?
     
     // MARK: - Outlets
     @IBOutlet weak var clvList: UICollectionView!
@@ -25,11 +31,11 @@ class HorizontalList: UICollectionViewCell {
         
         let popularItem = UINib(nibName: Nibs.PopularItemView, bundle: nil)
         clvList.register(popularItem,
-                             forCellWithReuseIdentifier: PopularItem.reuseId)
+                         forCellWithReuseIdentifier: PopularItem.reuseId)
         
         let blogItem = UINib(nibName: Nibs.BlogItemView, bundle: nil)
         clvList.register(blogItem,
-                             forCellWithReuseIdentifier: BlogItem.reuseId)
+                         forCellWithReuseIdentifier: BlogItem.reuseId)
         
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
@@ -91,5 +97,46 @@ extension HorizontalList: UICollectionViewDelegate, UICollectionViewDataSource {
             return cell
         }
         return UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        // Let's check the types and decide the action
+        if let cell = collectionView.cellForItem(at: indexPath) {
+            // Did select method
+            UIView.animate(withDuration: 0.1, animations: {
+                cell.transform = .init(scaleX: 0.95, y: 0.95)
+                cell.contentView.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
+            }) { _ in
+                UIView.animate(withDuration: 0.1) {
+                    cell.transform = .identity
+                    cell.contentView.backgroundColor = .clear
+                } completion: { [self] _ in
+                    if let populars = self.populars {
+                        
+                    } else if let posts = self.posts {
+                        let post = posts[indexPath.row]
+                        delegate?.blogPost(with: post.link)
+                    }
+                }
+            }
+        }
+    }
+    
+    // MARK: - UICollectionView Delegate Methods
+    // I wanted to add some animations to make UI interactive
+    func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) {
+            UIView.animate(withDuration: 0.1) {
+                cell.transform = .init(scaleX: 0.95, y: 0.95)
+            }
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
+        if let cell = collectionView.cellForItem(at: indexPath) {
+            UIView.animate(withDuration: 0.1) {
+                cell.transform = .identity
+            }
+        }
     }
 }

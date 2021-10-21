@@ -7,6 +7,7 @@
 
 import UIKit
 import SVProgressHUD
+import SafariServices
 
 class ServicesVC: UICollectionViewController {
     // MARK: - Parameters
@@ -89,6 +90,7 @@ extension ServicesVC: UICollectionViewDelegateFlowLayout {
                 }
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HorizontalList.reuseId,
                                                                     for: indexPath) as? HorizontalList else { return UICollectionViewCell() }
+                cell.delegate = self
                 if let popularServices = serviceItems as? [Service] {
                     cell.setCell(for: popularServices)
                 }
@@ -96,6 +98,7 @@ extension ServicesVC: UICollectionViewDelegateFlowLayout {
             } else if serviceItems[indexPath.row] is Post {
                 guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: HorizontalList.reuseId,
                                                                     for: indexPath) as? HorizontalList else { return UICollectionViewCell() }
+                cell.delegate = self
                 if let posts = serviceItems as? [Post] {
                     cell.setCell(for: posts)
                 }
@@ -184,6 +187,26 @@ extension ServicesVC: UICollectionViewDelegateFlowLayout {
         }
         return .zero
     }
+    
+    // MARK: - UICollectionView Delegate Methods
+//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        /// Let's get items and check the type.
+//        /// Service type goes to detail, blog posts will open safari vc
+//        if let serviceItems = servicesVM.services[indexPath.section].values.first {
+//            if let serviceItem = serviceItems[indexPath.row] as? Service {
+//
+//            } else if let blogItem = serviceItems[indexPath.row] as? Post {
+//                if let url = URL(string: blogItem.link) {
+//                    let config = SFSafariViewController.Configuration()
+//                    config.entersReaderIfAvailable = true
+//                    let vc = SFSafariViewController(url: url, configuration: config)
+//                    /// I will use form sheet comes from bottom over the page.
+//                    vc.modalPresentationStyle = .formSheet
+//                    present(vc, animated: true)
+//                }
+//            }
+//        }
+//    }
 }
 
 // MARK: - Services View Model Methods
@@ -194,6 +217,21 @@ extension ServicesVC: ServicesDelegate {
             print(error.localizedDescription)
         } else {
             collectionView!.reloadData()
+        }
+    }
+}
+
+// MARK: - Horizontal Item Methods
+extension ServicesVC: HorizontalListDelegate {
+    func blogPost(with link: String) {
+        if let url = URL(string: link) {
+            let config = SFSafariViewController.Configuration()
+            /// I see that the reader mode can be used with Armut Blog.
+            config.entersReaderIfAvailable = true
+            let vc = SFSafariViewController(url: url, configuration: config)
+            /// I will use form sheet comes from bottom over the page.
+            vc.modalPresentationStyle = .formSheet
+            present(vc, animated: true)
         }
     }
 }
