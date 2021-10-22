@@ -19,20 +19,25 @@ class GradientView: UIView {
         super.init(frame: frame)
         setupView()
     }
+    
+    convenience init(alpha: CGFloat) {
+        self.init()
+        setupView(alpha)
+    }
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupView()
     }
 
-    private func setupView() {
+    private func setupView(_ alpha: CGFloat = 0.7) {
         autoresizingMask = [.flexibleWidth, .flexibleHeight]
         guard let gradientLayer = self.layer as? CAGradientLayer else {
             return;
         }
 
         gradientLayer.colors = [UIColor.clear.cgColor,
-                                UIColor.black.withAlphaComponent(0.7).cgColor]
+                                UIColor.black.withAlphaComponent(alpha).cgColor]
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradientLayer.endPoint = CGPoint(x: 0.0, y: 1.0)
         gradientLayer.frame = self.bounds

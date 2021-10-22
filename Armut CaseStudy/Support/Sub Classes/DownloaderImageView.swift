@@ -9,12 +9,17 @@ import Foundation
 import Kingfisher
 
 class DownloaderImageView: UIImageView {
-    func dlImage(urlString: String,
+    func dlImage(urlString: String?,
                    placeholder: UIImage? = nil) {
+        
+        guard let urlStr = urlString else {
+            image = nil
+            return
+        }
         
         let processor = DownsamplingImageProcessor(size: self.bounds.size)
         
-        if let url = URL(string: urlString) {
+        if let url = URL(string: urlStr) {
             self.kf.indicatorType = .activity
             
             self.kf.setImage(
@@ -36,7 +41,7 @@ class DownloaderImageView: UIImageView {
                 }
             }
         } else {
-            self.image = placeholder
+            image = placeholder
         }
     }
 }

@@ -8,11 +8,11 @@
 import UIKit
 import SVProgressHUD
 import SafariServices
+import Hero
 
 class ServicesVC: UICollectionViewController {
     // MARK: - Parameters
     private let servicesVM = ServicesVM()
-    private let layout = UICollectionViewFlowLayout()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class ServicesVC: UICollectionViewController {
                                height: Int(view.bounds.height))
         
         setup()
-        
+                
         servicesVM.delegate = self
         SVProgressHUD.show()
         servicesVM.fetch()
@@ -44,6 +44,7 @@ class ServicesVC: UICollectionViewController {
 extension ServicesVC {
     /// Setup page layout, registrations of UI elements
     private func setup() {
+        let layout = UICollectionViewFlowLayout()
         /// Main header registration
         let nibHeader: UINib = UINib(nibName: Nibs.ServicesHeader, bundle: nil)
         collectionView!.register(nibHeader,
@@ -64,6 +65,20 @@ extension ServicesVC {
         layout.minimumLineSpacing = 10
         layout.scrollDirection = .vertical
         collectionView.collectionViewLayout = layout
+    }
+    
+    private func showService(_ service: Service?, _ heroId: String? = nil) {
+        guard let serviceDetail = UIStoryboard(name: "ServiceDetail",
+                                            bundle: nil)
+                .instantiateViewController(withIdentifier: "ServiceDetail2StrId") as? ServiceDetailVC else { return }
+        serviceDetail.service = service
+        serviceDetail.heroId = heroId
+        if heroId == nil {
+            navigationController?.hero.isEnabled = false
+        } else {
+            navigationController?.hero.isEnabled = true
+        }
+        navigationController?.pushViewController(serviceDetail, animated: true)
     }
 }
 
@@ -201,8 +216,8 @@ extension ServicesVC: UICollectionViewDelegateFlowLayout {
     
     // MARK: - UICollectionView Delegate Methods
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "ServiceDetail", bundle: nil).instantiateViewController(withIdentifier: "ServiceDetail2StrId")
-        navigationController?.pushViewController(storyboard, animated: true)
+        let service = servicesVM.services[indexPath.section].values.first?[indexPath.row] as? Service
+        showService(service)
     }
 }
 
@@ -220,6 +235,10 @@ extension ServicesVC: ServicesDelegate {
 
 // MARK: - Horizontal Item Methods
 extension ServicesVC: HorizontalListDelegate {
+    func popularService(post: Service, heroId: String) {
+        showService(post, heroId)
+    }
+    
     func blogPost(with link: String) {
         if let url = URL(string: link) {
             let config = SFSafariViewController.Configuration()
