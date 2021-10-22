@@ -7,9 +7,11 @@
 
 import UIKit
 import SafariServices
+import Hero
 
 protocol HorizontalListDelegate {
     func blogPost(with link: String)
+    func popularService(post: Service, heroId: String)
 }
 
 class HorizontalList: UICollectionViewCell {
@@ -40,6 +42,8 @@ class HorizontalList: UICollectionViewCell {
         layout.scrollDirection = .horizontal
         layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         layout.minimumLineSpacing = 10
+        
+        contentView.backgroundColor = .clear
         
     }
 }
@@ -83,6 +87,7 @@ extension HorizontalList: UICollectionViewDelegate, UICollectionViewDataSource {
                 for: indexPath) as? PopularItem else { return UICollectionViewCell() }
             
             let service = populars[indexPath.row]
+            cell.imgService.hero.id = "popular\(indexPath.row)"
             cell.setCell(service)
             
             return cell
@@ -105,14 +110,16 @@ extension HorizontalList: UICollectionViewDelegate, UICollectionViewDataSource {
             // Did select method
             UIView.animate(withDuration: 0.1, animations: {
                 cell.transform = .init(scaleX: 0.95, y: 0.95)
-                cell.contentView.backgroundColor = UIColor.systemGray
+                cell.contentView.backgroundColor = .systemGray
             }) { _ in
                 UIView.animate(withDuration: 0.1) {
                     cell.transform = .identity
                     cell.contentView.backgroundColor = .clear
                 } completion: { [self] _ in
                     if let populars = self.populars {
-                        
+                        let popularService = populars[indexPath.row]
+                        delegate?.popularService(post: popularService,
+                                                 heroId: "popular\(indexPath.row)")
                     } else if let posts = self.posts {
                         let post = posts[indexPath.row]
                         delegate?.blogPost(with: post.link)
@@ -123,19 +130,26 @@ extension HorizontalList: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     // MARK: - UICollectionView Delegate Methods
-    // I wanted to add some animations to make UI interactive
+    // Let's add some animations to make UI interactive
     func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) {
             UIView.animate(withDuration: 0.1) {
                 cell.transform = .init(scaleX: 0.95, y: 0.95)
+                cell.contentView.backgroundColor = .systemGray
             }
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
         if let cell = collectionView.cellForItem(at: indexPath) {
-            UIView.animate(withDuration: 0.1) {
-                cell.transform = .identity
+            // After selection, cell will return identity
+            // After drag out this code should work only
+            // Checking background color for that purpose
+            if cell.contentView.backgroundColor != .clear {
+                UIView.animate(withDuration: 0.1) {
+                    cell.transform = .identity
+                    cell.contentView.backgroundColor = .clear
+                }
             }
         }
     }

@@ -6,11 +6,12 @@
 //
 
 import UIKit
+import Hero
 
 class ServiceDetailVC: UIViewController {
     // MARK: - Parameters
-    private let imageView = UIImageView()
-    private let gradientView = GradientView()
+    private let imageView = DownloaderImageView()
+    private let gradientView = GradientView(alpha: 0.6)
     private let lblName = UILabel()
     /// Header height calculation multiplier
     private let headerImageHeightMultiplier = 0.6
@@ -22,6 +23,7 @@ class ServiceDetailVC: UIViewController {
     private let maxPullTreshold: CGFloat = 80
     private let serviceDetailVM = ServiceDetailVM()
     var service: Service?
+    var heroId: String?
     
     // MARK: - Outlets
     @IBOutlet weak var tbvService: UITableView!
@@ -46,11 +48,14 @@ class ServiceDetailVC: UIViewController {
             setAppearance()
         }
         
-        serviceDetailVM.delegate = self
-        serviceDetailVM.getService(with: 608)
         if let service = service {
             serviceDetailVM.delegate = self
             serviceDetailVM.getService(with: service.id)
+        }
+        
+        if let heroId = heroId {
+            self.hero.isEnabled = true
+            imageView.hero.id = heroId
         }
     }
 }
@@ -84,12 +89,13 @@ extension ServiceDetailVC {
         // under the top view. +20 is the padding.
         let offSet = headerImageHeight - topHeight
         tbvService.contentInset = UIEdgeInsets(top: offSet - 1, left: 0, bottom: 0, right: 0)
-        navigationItem.title = ""
+        navigationItem.title = service?.name ?? ""
 
         imageView.frame = CGRect(x: 0, y: 0, width: Helper.getWidth(), height: headerImageHeight)
         imageView.image = UIImage.init(named: "wedding")
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
+        imageView.dlImage(urlString: service?.imageURL)
         view.addSubview(imageView)
         
         lblName.frame = .zero
@@ -105,7 +111,7 @@ extension ServiceDetailVC {
         lblName.font = UIFont.boldSystemFont(ofSize: 26)
         lblName.numberOfLines = 2
         
-        gradientView.frame = CGRect(x: 0, y: 0, width: imageView.frame.width, height: imageView.frame.height)
+        gradientView.frame = imageView.frame
         imageView.addSubview(gradientView)
         imageView.addSubview(lblName)
         
@@ -152,6 +158,7 @@ extension ServiceDetailVC: UIScrollViewDelegate {
         let y = headerImageHeight - (scrollView.contentOffset.y + headerImageHeight)
         let height = min(max(y, 0), headerImageHeight + topHeight + maxPullTreshold)
         imageView.frame.size.height = height + topHeight
+        gradientView.frame.size.height = imageView.frame.height
         if height < topHeight {
             setAppearance(height)
         } else {

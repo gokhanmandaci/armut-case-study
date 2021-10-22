@@ -6,6 +6,7 @@ def defaultPods
   pod 'Kingfisher', '~> 7.0'
   pod 'SVProgressHUD'
   pod 'SwiftSVG', '~> 2.0'
+  pod 'Hero'
   pod 'CocoaDebug', :configurations => ['Debug']
 end
 
