@@ -105,7 +105,7 @@ extension HorizontalList: UICollectionViewDelegate, UICollectionViewDataSource {
             // Did select method
             UIView.animate(withDuration: 0.1, animations: {
                 cell.transform = .init(scaleX: 0.95, y: 0.95)
-                cell.contentView.backgroundColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1)
+                cell.contentView.backgroundColor = UIColor.systemGray
             }) { _ in
                 UIView.animate(withDuration: 0.1) {
                     cell.transform = .identity
