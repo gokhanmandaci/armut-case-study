@@ -108,7 +108,11 @@ extension ServiceDetailVC {
         let bottomAnchor = lblName.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -20)
         
         lblName.textColor = UIColor.white
-        lblName.font = UIFont.boldSystemFont(ofSize: 26)
+        var fontSize: CGFloat = 26
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            fontSize = 34
+        }
+        lblName.font = UIFont.boldSystemFont(ofSize: fontSize)
         lblName.numberOfLines = 2
         
         gradientView.frame = imageView.frame
@@ -148,7 +152,11 @@ extension ServiceDetailVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 500
+        var dimen: CGFloat = 50
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            dimen = 700
+        }
+        return dimen
     }
 }
 

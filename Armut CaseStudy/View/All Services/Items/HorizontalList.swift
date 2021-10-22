@@ -53,7 +53,13 @@ extension HorizontalList {
     func setCell(for populars: [Service]) {
         if self.populars == nil {
             self.populars = populars
-            layout.itemSize = CGSize(width: 150, height: 140)
+            var width: CGFloat = 150
+            var height: CGFloat = 140
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                width = 200
+                height = 190
+            }
+            layout.itemSize = CGSize(width: width, height: height)
             clvList.collectionViewLayout = layout
             clvList.reloadData()
         }
@@ -62,7 +68,13 @@ extension HorizontalList {
     func setCell(for posts: [Post]) {
         if self.posts == nil {
             self.posts = posts
-            layout.itemSize = CGSize(width: 150, height: 200)
+            var width: CGFloat = 150
+            var height: CGFloat = 200
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                width = 200
+                height = 250
+            }
+            layout.itemSize = CGSize(width: width, height: height)
             clvList.collectionViewLayout = layout
             clvList.reloadData()
         }

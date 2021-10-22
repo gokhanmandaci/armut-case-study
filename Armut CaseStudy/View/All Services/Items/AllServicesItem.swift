@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import SwiftSVG
 
 class AllServicesItem: UICollectionViewCell {
     // MARK: - Parameters
@@ -20,11 +19,18 @@ class AllServicesItem: UICollectionViewCell {
 // MARK: - Methods
 extension AllServicesItem {
     func setCell(_ service: Service) {
+        var dimen: CGFloat = 30
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            dimen = 60
+        }
         if stkService.arrangedSubviews.count <= 1 {
-            let serviceImage = UIView(SVGNamed: "\(service.id)")
+            let serviceImage = UIImageView()
+            serviceImage.image = UIImage(named: "\(service.id)")
+            serviceImage.contentMode = .scaleAspectFill
+            // UIView(SVGNamed: "\(service.id)")
             serviceImage.translatesAutoresizingMaskIntoConstraints = false
-            serviceImage.widthAnchor.constraint(equalToConstant: 40).isActive = true
-            serviceImage.heightAnchor.constraint(equalToConstant: 40).isActive = true
+            serviceImage.widthAnchor.constraint(equalToConstant: dimen).isActive = true
+            serviceImage.heightAnchor.constraint(equalToConstant: dimen).isActive = true
             serviceImage.clipsToBounds = true
             stkService.insertArrangedSubview(serviceImage, at: 0)
         }

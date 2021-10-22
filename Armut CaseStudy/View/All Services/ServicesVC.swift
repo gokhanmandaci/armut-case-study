@@ -22,7 +22,7 @@ class ServicesVC: UICollectionViewController {
                                height: Int(view.bounds.height))
         
         setup()
-                
+        
         servicesVM.delegate = self
         SVProgressHUD.show()
         servicesVM.fetch()
@@ -69,7 +69,7 @@ extension ServicesVC {
     
     private func showService(_ service: Service?, _ heroId: String? = nil) {
         guard let serviceDetail = UIStoryboard(name: "ServiceDetail",
-                                            bundle: nil)
+                                               bundle: nil)
                 .instantiateViewController(withIdentifier: "ServiceDetail2StrId") as? ServiceDetailVC else { return }
         serviceDetail.service = service
         serviceDetail.heroId = heroId
@@ -137,15 +137,23 @@ extension ServicesVC: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        var popularHeight: CGFloat = 140
+        var blogHeight: CGFloat = 200
+        var divider: CGFloat = 4
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            divider = 8
+            popularHeight = 190
+            blogHeight = 250
+        }
         if indexPath.section == 1 {
             // Calculate width dynamically
-            let dimen = (Helper.getWidth() - ((3 * 10) + (2 * 20))) / 4
+            let dimen = (Helper.getWidth() - ((3 * 10) + (2 * 20))) / divider
             return CGSize(width: dimen, height: dimen)
         } else {
             if indexPath.section == 2 {
-                return CGSize(width: Helper.getWidth(), height: 140)
+                return CGSize(width: Helper.getWidth(), height: popularHeight)
             } else {
-                return CGSize(width: Helper.getWidth(), height: 200)
+                return CGSize(width: Helper.getWidth(), height: blogHeight)
             }
         }
     }
@@ -162,10 +170,17 @@ extension ServicesVC: UICollectionViewDelegateFlowLayout {
                 if let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                                 withReuseIdentifier: SectionHeader.reuseId,
                                                                                 for: indexPath) as? SectionHeader {
+                    var sectionOneSize: CGFloat = 14
+                    var otherSectionsSize: CGFloat = 18
+                    if UIDevice.current.userInterfaceIdiom == .pad {
+                        sectionOneSize = 22
+                        otherSectionsSize = 26
+                    }
+                    
                     if indexPath.section == 1 {
-                        header.lblTitle.font = UIFont.boldSystemFont(ofSize: 14)
+                        header.lblTitle.font = UIFont.boldSystemFont(ofSize: sectionOneSize)
                     } else {
-                        header.lblTitle.font = UIFont.boldSystemFont(ofSize: 18)
+                        header.lblTitle.font = UIFont.boldSystemFont(ofSize: otherSectionsSize)
                     }
                     header.lblTitle.text = servicesVM.services[indexPath.section].keys.first ?? ""
                     return header
@@ -216,8 +231,10 @@ extension ServicesVC: UICollectionViewDelegateFlowLayout {
     
     // MARK: - UICollectionView Delegate Methods
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let service = servicesVM.services[indexPath.section].values.first?[indexPath.row] as? Service
-        showService(service)
+        if let service = servicesVM.services[indexPath.section].values.first?[indexPath.row] as? Service,
+           service.id != -1 {
+            showService(service)
+        }
     }
 }
 
