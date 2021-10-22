@@ -35,8 +35,6 @@
 		992A357627216DA2000D212D /* ServiceDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 992A357527216DA2000D212D /* ServiceDetail.storyboard */; };
 		992A357F2721A4B3000D212D /* ServiceDetailVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A357E2721A4B3000D212D /* ServiceDetailVM.swift */; };
 		992A35812721AFD1000D212D /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A35802721AFD1000D212D /* GradientView.swift */; };
-		992A35832722007C000D212D /* SpecView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 992A35822722007B000D212D /* SpecView.xib */; };
-		992A3585272200D1000D212D /* SpecView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A3584272200D1000D212D /* SpecView.swift */; };
 		992A3587272214AD000D212D /* ServiceDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A3586272214AD000D212D /* ServiceDetailVC.swift */; };
 		992A35892722CD6A000D212D /* SpecTbV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 992A35882722CD6A000D212D /* SpecTbV.xib */; };
 		992A358B2722CDAA000D212D /* SpecTbVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A358A2722CDAA000D212D /* SpecTbVC.swift */; };
@@ -105,8 +103,6 @@
 		992A357527216DA2000D212D /* ServiceDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ServiceDetail.storyboard; sourceTree = "<group>"; };
 		992A357E2721A4B3000D212D /* ServiceDetailVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailVM.swift; sourceTree = "<group>"; };
 		992A35802721AFD1000D212D /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		992A35822722007B000D212D /* SpecView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecView.xib; sourceTree = "<group>"; };
-		992A3584272200D1000D212D /* SpecView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecView.swift; sourceTree = "<group>"; };
 		992A3586272214AD000D212D /* ServiceDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDetailVC.swift; sourceTree = "<group>"; };
 		992A35882722CD6A000D212D /* SpecTbV.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpecTbV.xib; sourceTree = "<group>"; };
 		992A358A2722CDAA000D212D /* SpecTbVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecTbVC.swift; sourceTree = "<group>"; };
@@ -256,8 +252,6 @@
 			isa = PBXGroup;
 			children = (
 				992A35802721AFD1000D212D /* GradientView.swift */,
-				992A35822722007B000D212D /* SpecView.xib */,
-				992A3584272200D1000D212D /* SpecView.swift */,
 				992A35882722CD6A000D212D /* SpecTbV.xib */,
 				992A358A2722CDAA000D212D /* SpecTbVC.swift */,
 				992A358C2722E5D2000D212D /* FooterView.xib */,
@@ -501,7 +495,6 @@
 				992A354427203DDE000D212D /* ServicesHeader.xib in Resources */,
 				992A356827208DCA000D212D /* PopularItemView.xib in Resources */,
 				992A35892722CD6A000D212D /* SpecTbV.xib in Resources */,
-				992A35832722007C000D212D /* SpecView.xib in Resources */,
 				99C72C5D272033C800F901B0 /* LaunchScreen.storyboard in Resources */,
 				99C72C5A272033C800F901B0 /* Assets.xcassets in Resources */,
 				99C72C58272033BF00F901B0 /* Services.storyboard in Resources */,
@@ -664,7 +657,6 @@
 				992A353D27203A4F000D212D /* Services.swift in Sources */,
 				992A355327205994000D212D /* NetworkManager.swift in Sources */,
 				992A355E27206F24000D212D /* AllServicesItem.swift in Sources */,
-				992A3585272200D1000D212D /* SpecView.swift in Sources */,
 				992A356E27209A15000D212D /* HorizontalList.swift in Sources */,
 				992A355127205883000D212D /* Endpoints.swift in Sources */,
 				992A354A27204FD1000D212D /* Nibs.swift in Sources */,

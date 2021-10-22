@@ -33,11 +33,22 @@ class FooterView: UIView {
             UIView.AutoresizingMask.flexibleHeight
         ]
         
-        lblItemOne.layer.borderColor = UIColor.black.withAlphaComponent(0.4).cgColor
+        var color = UIColor(red: 204 / 255,
+                            green: 204 / 255,
+                            blue: 204 / 255,
+                            alpha: 1.0)
+        if self.traitCollection.userInterfaceStyle == .light {
+            color = UIColor(red: 31 / 255,
+                            green: 31 / 255,
+                            blue: 31 / 255,
+                            alpha: 0.3)
+        }
+        
+        lblItemOne.layer.borderColor = color.cgColor
         lblItemOne.layer.borderWidth = 1
-        lblItemTwo.layer.borderColor = UIColor.black.withAlphaComponent(0.4).cgColor
+        lblItemTwo.layer.borderColor = color.cgColor
         lblItemTwo.layer.borderWidth = 1
-        lblItemThree.layer.borderColor = UIColor.black.withAlphaComponent(0.4).cgColor
+        lblItemThree.layer.borderColor = color.cgColor
         lblItemThree.layer.borderWidth = 1
         
         addSubview(view)
