@@ -15,6 +15,13 @@ class PopularItem: UICollectionViewCell {
     @IBOutlet weak var imgService: DownloaderImageView!
     @IBOutlet weak var lblServiceName: UILabel!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        contentView.layer.cornerRadius = 4
+        contentView.clipsToBounds = true
+    }
+    
 }
 
 // MARK: - Methods

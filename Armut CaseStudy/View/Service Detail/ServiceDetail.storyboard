@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5EH-5n-Z6E">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Title de title-->
+        <scene sceneID="xE9-vJ-pmn">
+            <objects>
+                <viewController storyboardIdentifier="ServiceDetail2StrId" id="WAn-eR-hVk" customClass="ServiceDetailVC" customModule="Armut_CaseStudy" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jdO-XH-5gD">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rq3-g6-mOR">
+                                <rect key="frame" x="20" y="792" width="374" height="50"/>
+                                <color key="backgroundColor" red="0.34129744769999998" green="0.69703495500000001" blue="0.38818171620000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9K0-sT-nKR"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="DEVAM">
+                                    <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="16"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xr2-nk-W4t">
+                                <rect key="frame" x="20" y="782" width="374" height="2"/>
+                                <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="EX1-hR-4hj"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="oKN-WX-EW0">
+                                <rect key="frame" x="0.0" y="88" width="414" height="684"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="WAn-eR-hVk" id="pJt-Mc-YEj"/>
+                                    <outlet property="delegate" destination="WAn-eR-hVk" id="eJn-fA-WyE"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QwI-lb-Dpu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xr2-nk-W4t" firstAttribute="leading" secondItem="jdO-XH-5gD" secondAttribute="leading" constant="20" id="4cC-ey-2mv"/>
+                            <constraint firstItem="oKN-WX-EW0" firstAttribute="trailing" secondItem="QwI-lb-Dpu" secondAttribute="trailing" id="73n-dY-wd4"/>
+                            <constraint firstItem="xr2-nk-W4t" firstAttribute="top" secondItem="oKN-WX-EW0" secondAttribute="bottom" constant="10" id="8bd-HE-AlX"/>
+                            <constraint firstItem="QwI-lb-Dpu" firstAttribute="trailing" secondItem="Rq3-g6-mOR" secondAttribute="trailing" constant="20" id="BOV-EV-PQK"/>
+                            <constraint firstAttribute="trailing" secondItem="xr2-nk-W4t" secondAttribute="trailing" constant="20" id="Lee-px-JId"/>
+                            <constraint firstItem="oKN-WX-EW0" firstAttribute="top" secondItem="QwI-lb-Dpu" secondAttribute="top" id="R3y-qz-3nR"/>
+                            <constraint firstItem="Rq3-g6-mOR" firstAttribute="top" secondItem="xr2-nk-W4t" secondAttribute="bottom" constant="8" id="qZ4-2I-c7M"/>
+                            <constraint firstItem="oKN-WX-EW0" firstAttribute="leading" secondItem="QwI-lb-Dpu" secondAttribute="leading" id="vhP-8Y-lSw"/>
+                            <constraint firstItem="QwI-lb-Dpu" firstAttribute="bottom" secondItem="Rq3-g6-mOR" secondAttribute="bottom" constant="20" id="vkS-kS-0ZA"/>
+                            <constraint firstItem="Rq3-g6-mOR" firstAttribute="leading" secondItem="QwI-lb-Dpu" secondAttribute="leading" constant="20" id="z65-qp-nei"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title de title" id="ghs-QJ-vXZ">
+                        <barButtonItem key="backBarButtonItem" title="      " id="fBL-bc-gHR"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tbvService" destination="oKN-WX-EW0" id="MSd-lU-YHw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vcm-Ss-RUF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="737.94642857142856"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mT0-z8-bJD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5EH-5n-Z6E" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gix-4X-Ypw">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WAn-eR-hVk" kind="relationship" relationship="rootViewController" id="M95-EP-2sB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RDR-hq-7GK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="138" y="738"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
