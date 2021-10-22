@@ -13,4 +13,5 @@ struct Nibs {
     static let HorizontalListView = "HorizontalListView"
     static let PopularItemView = "PopularItemView"
     static let BlogItemView = "BlogItemView"
+    static let SpecTbV = "SpecTbV"
 }

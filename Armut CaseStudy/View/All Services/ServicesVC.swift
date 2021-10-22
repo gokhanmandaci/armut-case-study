@@ -27,6 +27,17 @@ class ServicesVC: UICollectionViewController {
         SVProgressHUD.show()
         servicesVM.fetch()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
 }
 
 // MARK: - Methods
@@ -189,24 +200,10 @@ extension ServicesVC: UICollectionViewDelegateFlowLayout {
     }
     
     // MARK: - UICollectionView Delegate Methods
-//    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        /// Let's get items and check the type.
-//        /// Service type goes to detail, blog posts will open safari vc
-//        if let serviceItems = servicesVM.services[indexPath.section].values.first {
-//            if let serviceItem = serviceItems[indexPath.row] as? Service {
-//
-//            } else if let blogItem = serviceItems[indexPath.row] as? Post {
-//                if let url = URL(string: blogItem.link) {
-//                    let config = SFSafariViewController.Configuration()
-//                    config.entersReaderIfAvailable = true
-//                    let vc = SFSafariViewController(url: url, configuration: config)
-//                    /// I will use form sheet comes from bottom over the page.
-//                    vc.modalPresentationStyle = .formSheet
-//                    present(vc, animated: true)
-//                }
-//            }
-//        }
-//    }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "ServiceDetail", bundle: nil).instantiateViewController(withIdentifier: "ServiceDetail2StrId")
+        navigationController?.pushViewController(storyboard, animated: true)
+    }
 }
 
 // MARK: - Services View Model Methods
