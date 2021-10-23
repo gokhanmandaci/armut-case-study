@@ -21,7 +21,7 @@ class FailedRequestVC: UIViewController {
     
     // MARK: - Actions
     @IBAction func btnYesAction(_ sender: Any) {
-        delegate?.retry()
+        animate(to: false, willRetry: true)
     }
     @IBAction func btnNoAction(_ sender: Any) {
         animate(to: false)
@@ -50,7 +50,7 @@ class FailedRequestVC: UIViewController {
     /// Animate the popup view. Show or hide.
     /// Dismiss if visible is false
     /// - Parameter visible: Decides show or hide
-    private func animate(to visible: Bool) {
+    private func animate(to visible: Bool, willRetry: Bool = false) {
         var topConstraint = Helper.getHeight()
         var color = UIColor.clear
         if visible {
@@ -68,7 +68,11 @@ class FailedRequestVC: UIViewController {
             view.layoutIfNeeded()
         } completion: { [weak self] _ in
             if !visible {
-                self?.dismiss(animated: false)
+                self?.dismiss(animated: false, completion: { [weak self] in
+                    if willRetry {
+                        self?.delegate?.retry()
+                    }
+                })
             }
         }
 

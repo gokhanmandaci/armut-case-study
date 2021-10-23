@@ -41,6 +41,7 @@
 		992A358D2722E5D2000D212D /* FooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 992A358C2722E5D2000D212D /* FooterView.xib */; };
 		992A358F2722E5F6000D212D /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A358E2722E5F6000D212D /* FooterView.swift */; };
 		992A35922722F5B5000D212D /* UIApplicationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A35912722F5B5000D212D /* UIApplicationExt.swift */; };
+		998726CC272419850033D750 /* NetworkManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998726CB272419850033D750 /* NetworkManagerTests.swift */; };
 		99B397072723847B00865167 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B397062723847B00865167 /* Storyboards.swift */; };
 		99B3970927238B1400865167 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3970827238B1400865167 /* Service.swift */; };
 		99B3970B27238B2100865167 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3970A27238B2100865167 /* Post.swift */; };
@@ -114,6 +115,7 @@
 		992A358C2722E5D2000D212D /* FooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterView.xib; sourceTree = "<group>"; };
 		992A358E2722E5F6000D212D /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		992A35912722F5B5000D212D /* UIApplicationExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExt.swift; sourceTree = "<group>"; };
+		998726CB272419850033D750 /* NetworkManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerTests.swift; sourceTree = "<group>"; };
 		99B397062723847B00865167 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
 		99B3970827238B1400865167 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		99B3970A27238B2100865167 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 			isa = PBXGroup;
 			children = (
 				99C72C67272033C800F901B0 /* Armut_CaseStudyTests.swift */,
+				998726CB272419850033D750 /* NetworkManagerTests.swift */,
 			);
 			path = "Armut CaseStudyTests";
 			sourceTree = "<group>";
@@ -698,6 +701,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				998726CC272419850033D750 /* NetworkManagerTests.swift in Sources */,
 				99C72C68272033C800F901B0 /* Armut_CaseStudyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

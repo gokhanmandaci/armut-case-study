@@ -719,7 +719,7 @@
 		0300AD12E1B272F80B4CEE94D785444F /* icon_file_type_swift@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_file_type_swift@3x.png"; path = "Sources/Resources/FileType/icon_file_type_swift@3x.png"; sourceTree = "<group>"; };
 		047B3A68070C7A571E180A1F0B6DBB93 /* Kingfisher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Kingfisher.release.xcconfig; sourceTree = "<group>"; };
 		0558F7A9C1705B7D913762381274BACA /* KFImageProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KFImageProtocol.swift; path = Sources/SwiftUI/KFImageProtocol.swift; sourceTree = "<group>"; };
-		05713A5898ABEC5ECDF571B2294D18DC /* _fishhook.c */ = {isa = PBXFileReference; includeInIndex = 1; name = _fishhook.c; path = Sources/fishhook/_fishhook.c; sourceTree = "<group>"; };
+		05713A5898ABEC5ECDF571B2294D18DC /* _fishhook.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = _fishhook.c; path = Sources/fishhook/_fishhook.c; sourceTree = "<group>"; };
 		057B25DEC42D7333C8F4BCD2DBBA5E44 /* CALayer+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "CALayer+Hero.swift"; path = "Sources/Extensions/CALayer+Hero.swift"; sourceTree = "<group>"; };
 		05BC870001BB7B097F9664B559BAB5C9 /* icon_file_type_avi@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_file_type_avi@2x.png"; path = "Sources/Resources/FileType/icon_file_type_avi@2x.png"; sourceTree = "<group>"; };
 		069D9F56F304C34CA9ECFE56DD0D6333 /* icon_file_type_midi@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_file_type_midi@3x.png"; path = "Sources/Resources/FileType/icon_file_type_midi@3x.png"; sourceTree = "<group>"; };
@@ -744,7 +744,7 @@
 		1298875198FA5CC017D347C98F7F82AC /* Pods-Armut CaseStudy-Armut CaseStudyUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Armut CaseStudy-Armut CaseStudyUITests-frameworks.sh"; sourceTree = "<group>"; };
 		12D7E785E36F85F4B00AE0436336B296 /* SVGCircle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGCircle.swift; path = SwiftSVG/SVG/Elements/SVGCircle.swift; sourceTree = "<group>"; };
 		13A34046757B49E8AABFE01AE2BE5972 /* Pods-Armut CaseStudy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Armut CaseStudy.debug.xcconfig"; sourceTree = "<group>"; };
-		13E778F4B833EE5D7ABE882406A8215E /* Hero */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Hero; path = Hero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		13E778F4B833EE5D7ABE882406A8215E /* Hero.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Hero.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1435A61476E5AC54FCB0B1ED49C6085B /* icon_file_type_db@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_file_type_db@3x.png"; path = "Sources/Resources/FileType/icon_file_type_db@3x.png"; sourceTree = "<group>"; };
 		145694504F9756D33CC4DBC58771FE56 /* DelaysApplyingAttributes.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DelaysApplyingAttributes.swift; path = SwiftSVG/SVG/Attributes/DelaysApplyingAttributes.swift; sourceTree = "<group>"; };
 		14966133EC11F4A4D283AA4B5675250F /* GPBMessage+CocoaDebug.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GPBMessage+CocoaDebug.h"; path = "Sources/Categories/GPBMessage+CocoaDebug.h"; sourceTree = "<group>"; };
@@ -839,7 +839,7 @@
 		368EFB1DE66FCEAA169D6248D085079B /* icon_file_type_default.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_file_type_default.png; path = Sources/Resources/FileType/icon_file_type_default.png; sourceTree = "<group>"; };
 		372484D1932CC881C2BD605155DB5869 /* ImageDataProcessor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageDataProcessor.swift; path = Sources/Networking/ImageDataProcessor.swift; sourceTree = "<group>"; };
 		373EFF7594F6291FC8E86FCB53A8FE66 /* UIKit+Hero.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIKit+Hero.swift"; path = "Sources/Extensions/UIKit+Hero.swift"; sourceTree = "<group>"; };
-		3756A9BBE41ABEE8DCBF5BCA6972C4DA /* Moya */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Moya; path = Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3756A9BBE41ABEE8DCBF5BCA6972C4DA /* Moya.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Moya.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37926E07BF8553AE7EE81BAB9B402F4C /* String+Subscript.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "String+Subscript.swift"; path = "SwiftSVG/SVG/Helpers/String+Subscript.swift"; sourceTree = "<group>"; };
 		38307DDA5D151ABAEE30E78505B17090 /* ImageCache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageCache.swift; path = Sources/Cache/ImageCache.swift; sourceTree = "<group>"; };
 		389EBAB7EE19961DC62ED3A625E89C43 /* SwiftSVG.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftSVG.modulemap; sourceTree = "<group>"; };
@@ -944,7 +944,7 @@
 		5D21D779414C87B5C42658C3E8823381 /* icon_file_type_eps@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_file_type_eps@2x.png"; path = "Sources/Resources/FileType/icon_file_type_eps@2x.png"; sourceTree = "<group>"; };
 		5D45B4A44B54900F6554111D2DE45FFB /* icon_file_type_jar@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_file_type_jar@2x.png"; path = "Sources/Resources/FileType/icon_file_type_jar@2x.png"; sourceTree = "<group>"; };
 		5D5FEEEFF392C0B78F0CF869E1C9D020 /* Pods-Armut CaseStudy-Armut CaseStudyUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Armut CaseStudy-Armut CaseStudyUITests.modulemap"; sourceTree = "<group>"; };
-		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E0C1C841614BC87A1C5FB136C1A9DEA /* icon_file_type_css.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_file_type_css.png; path = Sources/Resources/FileType/icon_file_type_css.png; sourceTree = "<group>"; };
 		5E658A2D8B6EFB197C09F338DD2D80E8 /* Hero.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = Hero.modulemap; sourceTree = "<group>"; };
 		5E8CBA50CA782303982121826CA7C9B6 /* HeroTransition+UIViewControllerTransitioningDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "HeroTransition+UIViewControllerTransitioningDelegate.swift"; path = "Sources/Transition/HeroTransition+UIViewControllerTransitioningDelegate.swift"; sourceTree = "<group>"; };
@@ -959,7 +959,7 @@
 		61AFA2F7604333CDE301B4E09EAA6A3D /* MultipartFormData.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MultipartFormData.swift; path = Sources/Moya/MultipartFormData.swift; sourceTree = "<group>"; };
 		6220C9578F1BD97ECC2862034F949D3D /* AuthenticationChallengeResponsable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AuthenticationChallengeResponsable.swift; path = Sources/Networking/AuthenticationChallengeResponsable.swift; sourceTree = "<group>"; };
 		62C6484B039923A9BD1723197BA7A930 /* AccessTokenPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AccessTokenPlugin.swift; path = Sources/Moya/Plugins/AccessTokenPlugin.swift; sourceTree = "<group>"; };
-		62DF1BDA41B723D7B0440FD765F1C141 /* SwiftSVG */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftSVG; path = SwiftSVG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62DF1BDA41B723D7B0440FD765F1C141 /* SwiftSVG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftSVG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		630E18CABD54119D05DD8A7D45C38D54 /* HeroModifier.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroModifier.swift; path = Sources/HeroModifier.swift; sourceTree = "<group>"; };
 		63B07DCBD009F2F6E740987C7C92C0C2 /* Kingfisher-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Kingfisher-dummy.m"; sourceTree = "<group>"; };
 		64BC3887222D7D13A62AFF546031D07D /* Hero-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Hero-prefix.pch"; sourceTree = "<group>"; };
@@ -1090,7 +1090,7 @@
 		9BFB37C7DDE4876FC49C1E7ABDEC93F0 /* CrashCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CrashCell.swift; path = Sources/App/CrashCell.swift; sourceTree = "<group>"; };
 		9C31594DCF0EC0178076ADB5BFC54DBB /* _OCLogHelper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _OCLogHelper.h; path = Sources/Logs/_OCLogHelper.h; sourceTree = "<group>"; };
 		9D563ACBF00823430290214CB0CEE404 /* _Sandboxer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _Sandboxer.h; path = Sources/Sandbox/_Sandboxer.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DDCB9411B7BDBF466895FD93B599A99 /* SVGParser.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGParser.swift; path = SwiftSVG/SVG/Parser/SVGParser.swift; sourceTree = "<group>"; };
 		9F1249E36637175F0947150D37EE394D /* Pods-Armut CaseStudyTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Armut CaseStudyTests.modulemap"; sourceTree = "<group>"; };
 		A0964050D7DA0EEBC7D5781162443C74 /* icon_file_type_psd@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_file_type_psd@3x.png"; path = "Sources/Resources/FileType/icon_file_type_psd@3x.png"; sourceTree = "<group>"; };
@@ -1182,7 +1182,7 @@
 		C8BA8DD0723333226A2ACB8D36030D26 /* Cancellable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cancellable.swift; path = Sources/Moya/Cancellable.swift; sourceTree = "<group>"; };
 		C96544D2102B24EB347B080F7B2DBD5F /* _QNSURLSessionDemux.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _QNSURLSessionDemux.h; path = Sources/CustomHTTPProtocol/_QNSURLSessionDemux.h; sourceTree = "<group>"; };
 		C97E78313F1E7B024541F5F6100BD4A9 /* icon_file_type_default@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_file_type_default@2x.png"; path = "Sources/Resources/FileType/icon_file_type_default@2x.png"; sourceTree = "<group>"; };
-		CA4C3A23CF67AF861CBCBF4F978F7146 /* CocoaDebug */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CocoaDebug; path = CocoaDebug.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA4C3A23CF67AF861CBCBF4F978F7146 /* CocoaDebug.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CocoaDebug.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA920D0BF6BE8EF7356A743E9AD2B034 /* ImageContext.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageContext.swift; path = Sources/SwiftUI/ImageContext.swift; sourceTree = "<group>"; };
 		CA94D2DE51D3938848096B4F9342A138 /* HTTPHeaders.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HTTPHeaders.swift; path = Source/HTTPHeaders.swift; sourceTree = "<group>"; };
 		CBC71CBFDE59C2262046280BD1E34411 /* HeroDebugPlugin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HeroDebugPlugin.swift; path = "Sources/Debug Plugin/HeroDebugPlugin.swift"; sourceTree = "<group>"; };
@@ -1255,7 +1255,7 @@
 		E9423A97500DEC3AC989553367FDAF75 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/CFNetwork.framework; sourceTree = DEVELOPER_DIR; };
 		E9424C606C44335EBBB6B15615A4C9AA /* icon_file_type_svg.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = icon_file_type_svg.png; path = Sources/Resources/FileType/icon_file_type_svg.png; sourceTree = "<group>"; };
 		E974B823C9D23A0787CAC44C8F63ECE9 /* SVGEllipse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SVGEllipse.swift; path = SwiftSVG/SVG/Elements/SVGEllipse.swift; sourceTree = "<group>"; };
-		E97D43C46A45EE515A4DA3AF94398441 /* SVProgressHUD */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SVProgressHUD; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E97D43C46A45EE515A4DA3AF94398441 /* SVProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SVProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9CAE8CA71EAC3B15C81BA0D6769FEE5 /* _ImageController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = _ImageController.h; path = Sources/Sandbox/_ImageController.h; sourceTree = "<group>"; };
 		E9EC16FACD7ABCBDD062E0F44073A061 /* icon_file_type_bin@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = "icon_file_type_bin@2x.png"; path = "Sources/Resources/FileType/icon_file_type_bin@2x.png"; sourceTree = "<group>"; };
 		EAA4E1D39D8872498B80500649ECE2B3 /* SwiftSVG-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftSVG-dummy.m"; sourceTree = "<group>"; };
@@ -1593,16 +1593,16 @@
 		0891B1BE36D8C5CEC13560184B988DE3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */,
-				CA4C3A23CF67AF861CBCBF4F978F7146 /* CocoaDebug */,
-				13E778F4B833EE5D7ABE882406A8215E /* Hero */,
+				5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */,
+				CA4C3A23CF67AF861CBCBF4F978F7146 /* CocoaDebug.framework */,
+				13E778F4B833EE5D7ABE882406A8215E /* Hero.framework */,
 				C3F44C782D64D7EB20B61CE3844EBFAD /* Kingfisher */,
-				3756A9BBE41ABEE8DCBF5BCA6972C4DA /* Moya */,
+				3756A9BBE41ABEE8DCBF5BCA6972C4DA /* Moya.framework */,
 				B56DB1F7E2DCA328F27E6FC1927E3C67 /* Pods-Armut CaseStudy */,
 				D5DC882DE95E903D0FED8A332219570D /* Pods-Armut CaseStudy-Armut CaseStudyUITests */,
 				29F6D31D469B3B3431423F48B94B8B40 /* Pods-Armut CaseStudyTests */,
-				E97D43C46A45EE515A4DA3AF94398441 /* SVProgressHUD */,
-				62DF1BDA41B723D7B0440FD765F1C141 /* SwiftSVG */,
+				E97D43C46A45EE515A4DA3AF94398441 /* SVProgressHUD.framework */,
+				62DF1BDA41B723D7B0440FD765F1C141 /* SwiftSVG.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1613,7 +1613,6 @@
 				C85398FD3461B5A87B938926208309AB /* Core */,
 				B92A5363942CE3C07D9D2A2C73728A8B /* Support Files */,
 			);
-			name = Moya;
 			path = Moya;
 			sourceTree = "<group>";
 		};
@@ -1716,7 +1715,6 @@
 				025BF15AE5612BB65555DA93B16F4AEA /* Resources */,
 				A0F3D8AF8415367D7ADFD19AD82A8BBD /* Support Files */,
 			);
-			name = CocoaDebug;
 			path = CocoaDebug;
 			sourceTree = "<group>";
 		};
@@ -1806,7 +1804,6 @@
 				5B40E4A5F12CE92F8DA2A7961C4F3E70 /* UIViewController+Hero.swift */,
 				67A3716904BF2FC6056DA7032A0BEBB6 /* Support Files */,
 			);
-			name = Hero;
 			path = Hero;
 			sourceTree = "<group>";
 		};
@@ -1956,7 +1953,6 @@
 				6B7E7D851239AB2ED11241B937101283 /* Unown.swift */,
 				769E3981C27FDB6F4E5806B28E1A7BDD /* Support Files */,
 			);
-			name = SwiftSVG;
 			path = SwiftSVG;
 			sourceTree = "<group>";
 		};
@@ -2056,7 +2052,6 @@
 				8ACEDD1391D9F0A63AE44E4697E54E33 /* WKInterfaceImage+Kingfisher.swift */,
 				8B38B37F9D45E9EFF68C97A2D971B066 /* Support Files */,
 			);
-			name = Kingfisher;
 			path = Kingfisher;
 			sourceTree = "<group>";
 		};
@@ -2156,7 +2151,6 @@
 				AB35A52C44D0432F95D655763EA4F77F /* Resources */,
 				3F2DC87E3E87DB5B82922E63B4FCD477 /* Support Files */,
 			);
-			name = SVProgressHUD;
 			path = SVProgressHUD;
 			sourceTree = "<group>";
 		};
@@ -2200,7 +2194,6 @@
 				5A5D5A70D0EF2A8E32007D0E48232109 /* Validation.swift */,
 				06D3F80F97F668442DDE3C9CA1C40DBD /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -2340,7 +2333,7 @@
 			);
 			name = CocoaDebug;
 			productName = CocoaDebug;
-			productReference = CA4C3A23CF67AF861CBCBF4F978F7146 /* CocoaDebug */;
+			productReference = CA4C3A23CF67AF861CBCBF4F978F7146 /* CocoaDebug.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		17F9141D333DA1A7BE5937F227221070 /* Moya */ = {
@@ -2359,7 +2352,7 @@
 			);
 			name = Moya;
 			productName = Moya;
-			productReference = 3756A9BBE41ABEE8DCBF5BCA6972C4DA /* Moya */;
+			productReference = 3756A9BBE41ABEE8DCBF5BCA6972C4DA /* Moya.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		19F78610A8A3CFE8FB622A756AEFE039 /* Pods-Armut CaseStudy-Armut CaseStudyUITests */ = {
@@ -2402,7 +2395,7 @@
 			);
 			name = SVProgressHUD;
 			productName = SVProgressHUD;
-			productReference = E97D43C46A45EE515A4DA3AF94398441 /* SVProgressHUD */;
+			productReference = E97D43C46A45EE515A4DA3AF94398441 /* SVProgressHUD.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		2349E173F60A2065FC65E52DD215DFF0 /* SwiftSVG */ = {
@@ -2420,7 +2413,7 @@
 			);
 			name = SwiftSVG;
 			productName = SwiftSVG;
-			productReference = 62DF1BDA41B723D7B0440FD765F1C141 /* SwiftSVG */;
+			productReference = 62DF1BDA41B723D7B0440FD765F1C141 /* SwiftSVG.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		6237AFF7C7A7BCF442E3A8E03ED7F4FB /* Pods-Armut CaseStudy */ = {
@@ -2463,7 +2456,7 @@
 			);
 			name = Hero;
 			productName = Hero;
-			productReference = 13E778F4B833EE5D7ABE882406A8215E /* Hero */;
+			productReference = 13E778F4B833EE5D7ABE882406A8215E /* Hero.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		BF56CFD7D0AE5102DCC5DB14C1673257 /* Pods-Armut CaseStudyTests */ = {
@@ -2525,7 +2518,7 @@
 			);
 			name = Alamofire;
 			productName = Alamofire;
-			productReference = 5D797E9A5C5782CE845840781FA1CC81 /* Alamofire */;
+			productReference = 5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -2535,7 +2528,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1300;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -3338,7 +3331,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Moya/Moya-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Moya/Moya-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3514,7 +3507,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SVProgressHUD/SVProgressHUD-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3549,7 +3542,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Hero/Hero-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Hero/Hero-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3647,7 +3640,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3868,7 +3861,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Hero/Hero-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Hero/Hero-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3902,7 +3895,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftSVG/SwiftSVG-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftSVG/SwiftSVG-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -3972,7 +3965,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/CocoaDebug/CocoaDebug-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/CocoaDebug/CocoaDebug-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4008,7 +4001,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4042,7 +4035,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SVProgressHUD/SVProgressHUD-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SVProgressHUD/SVProgressHUD-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4077,7 +4070,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/CocoaDebug/CocoaDebug-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/CocoaDebug/CocoaDebug-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4111,7 +4104,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SwiftSVG/SwiftSVG-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SwiftSVG/SwiftSVG-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4147,7 +4140,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Moya/Moya-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Moya/Moya-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

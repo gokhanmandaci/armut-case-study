@@ -7,12 +7,16 @@
 
 import UIKit
 import Hero
+import SVProgressHUD
 
 class ServiceDetailVC: UIViewController {
     // MARK: - Parameters
+    // UI Elements
     private let imageView = DownloaderImageView()
     private let gradientView = GradientView(alpha: 0.6)
     private let lblName = UILabel()
+    private var navBarColor: UIColor = .white
+    // Calculation elements
     /// Header height calculation multiplier
     private let headerImageHeightMultiplier = 0.6
     private var headerImageHeight: CGFloat = 0.0
@@ -21,10 +25,12 @@ class ServiceDetailVC: UIViewController {
     private var topHeight: CGFloat = 64
     /// Sets max pull value for tableview
     private let maxPullTreshold: CGFloat = 80
+    // View Model Instance
     private let serviceDetailVM = ServiceDetailVM()
-    private var navBarColor: UIColor = .white
+    // Preload
     var service: Service?
     var heroId: String?
+    /// Storyboard id
     static let strId = "ServiceDetailStrId"
     
     // MARK: - Outlets
@@ -33,18 +39,7 @@ class ServiceDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if traitCollection.userInterfaceStyle == .dark {
-            navBarColor = UIColor(red: 31 / 255,
-                                  green: 31 / 255,
-                                  blue: 31 / 255,
-                                  alpha: 0.3)
-        }
-        
-        setupLayout()
-        let specNib = UINib(nibName: Nibs.SpecTbV, bundle: nil)
-        tbvService.register(specNib, forCellReuseIdentifier: SpecTbVC.reuseId)
-        tbvService.estimatedRowHeight = 60
-        tbvService.rowHeight = UITableView.automaticDimension
+        setup()
         
         if let service = service {
             serviceDetailVM.delegate = self
@@ -53,7 +48,13 @@ class ServiceDetailVC: UIViewController {
     }
     
     // MARK: - Actions
-    @IBAction func btnContinueAction(_ sender: Any) {}
+    @IBAction func btnContinueAction(_ sender: Any) {
+        guard let failedView = UIStoryboard(name: Storyboards.FailedRequestView, bundle: nil)
+            .instantiateViewController(withIdentifier: FailedRequestVC.strId) as? FailedRequestVC else { return }
+        failedView.modalPresentationStyle = .overCurrentContext
+        failedView.delegate = self
+        present(failedView, animated: false)
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -74,6 +75,26 @@ class ServiceDetailVC: UIViewController {
 
 // MARK: - Methods
 extension ServiceDetailVC {
+    /// Sets UI and UI elements and parameters
+    private func setup() {
+        navigationItem.title = service?.name ?? ""
+        
+        if traitCollection.userInterfaceStyle == .dark {
+            navBarColor = UIColor(red: 31 / 255,
+                                  green: 31 / 255,
+                                  blue: 31 / 255,
+                                  alpha: 0.3)
+        }
+        
+        setupLayout()
+        setSizeDependentElements()
+        
+        let specNib = UINib(nibName: Nibs.SpecTbV, bundle: nil)
+        tbvService.register(specNib, forCellReuseIdentifier: SpecTbVC.reuseId)
+        tbvService.estimatedRowHeight = 60
+        tbvService.rowHeight = UITableView.automaticDimension
+    }
+    
     /// Set's navigation bar appearence
     /// - Parameter height: Base height calculated from scroll
     private func setAppearance(_ height: CGFloat? = nil) {
@@ -93,15 +114,8 @@ extension ServiceDetailVC {
     }
     
     private func setupLayout() {
-        let navBarHeight = navigationController?.navigationBar.frame.height
-        let statusBarHeight = UIApplication.shared.statusBarHeight()
-        headerImageHeight = Helper.getWidth() * headerImageHeightMultiplier
-        topHeight = (navBarHeight! + statusBarHeight)
-        // Subtract navigation bar height. We want our image located right
-        // under the top view.
         let offSet = headerImageHeight - topHeight
         tbvService.contentInset = UIEdgeInsets(top: offSet - 1, left: 0, bottom: 0, right: 0)
-        navigationItem.title = service?.name ?? ""
 
         imageView.frame = CGRect(x: 0, y: 0, width: Helper.getWidth(), height: headerImageHeight)
         imageView.image = UIImage.init(named: "wedding")
@@ -117,7 +131,6 @@ extension ServiceDetailVC {
         let leftAnchor = lblName.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
         let rightAnchor = lblName.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
         let bottomAnchor = lblName.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -20)
-        
         lblName.textColor = UIColor.white
         var fontSize: CGFloat = 26
         if UIDevice.current.userInterfaceIdiom == .pad {
@@ -129,8 +142,14 @@ extension ServiceDetailVC {
         gradientView.frame = imageView.frame
         imageView.addSubview(gradientView)
         imageView.addSubview(lblName)
-        
         view.addConstraints([leftAnchor, rightAnchor, bottomAnchor])
+    }
+    
+    private func setSizeDependentElements() {
+        let navBarHeight = navigationController?.navigationBar.frame.height
+        let statusBarHeight = UIApplication.shared.statusBarHeight()
+        headerImageHeight = Helper.getWidth() * headerImageHeightMultiplier
+        topHeight = (navBarHeight! + statusBarHeight)
     }
 }
 
@@ -188,13 +207,15 @@ extension ServiceDetailVC: UIScrollViewDelegate {
 // MARK: - Service Detail View Model Methods
 extension ServiceDetailVC: ServiceDetailDelegate {
     func fetched(_ error: Error?) {
-        if let error = error {
-            print(error.localizedDescription)
-            guard let failedView = UIStoryboard(name: Storyboards.FailedRequestView, bundle: nil)
-                .instantiateViewController(withIdentifier: FailedRequestVC.strId) as? FailedRequestVC else { return }
-            failedView.modalPresentationStyle = .overCurrentContext
-            failedView.delegate = self
-            present(failedView, animated: false)
+        SVProgressHUD.dismiss()
+        if error != nil {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { [self] in
+                guard let failedView = UIStoryboard(name: Storyboards.FailedRequestView, bundle: nil)
+                    .instantiateViewController(withIdentifier: FailedRequestVC.strId) as? FailedRequestVC else { return }
+                failedView.modalPresentationStyle = .overCurrentContext
+                failedView.delegate = self
+                present(failedView, animated: false)
+            }
         } else {
             navigationItem.title = serviceDetailVM.serviceDetail?.name ?? ""
             lblName.text = serviceDetailVM.serviceDetail?.longName ?? ""
@@ -207,6 +228,7 @@ extension ServiceDetailVC: ServiceDetailDelegate {
 extension ServiceDetailVC: FailedRequestsDelegate {
     func retry() {
         if let service = service {
+            SVProgressHUD.show()
             serviceDetailVM.getService(with: service.id)
         }
     }

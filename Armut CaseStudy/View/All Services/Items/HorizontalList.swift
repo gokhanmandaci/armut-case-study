@@ -93,6 +93,7 @@ extension HorizontalList: UICollectionViewDelegate, UICollectionViewDataSource, 
                 for: indexPath) as? BlogItem else { return UICollectionViewCell() }
             
             let blog = posts[indexPath.row]
+            cell.accessibilityIdentifier = "popular\(indexPath.row)"
             cell.setCell(blog)
             
             return cell
