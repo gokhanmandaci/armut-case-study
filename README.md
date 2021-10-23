@@ -31,9 +31,9 @@ I spent time on the questions in the bonus section.
 + I used leak profiling tool to catch leaks which have a negative effect on scroll performance.
 
 Cocoapods: </br>
-  'Moya', '~> 15.0' - Networking abstraction layer based over Alamofire </br>
-  'Kingfisher', '~> 7.0' - Image download and caching </br>
+  'Moya' - Networking abstraction layer based over Alamofire </br>
+  'Kingfisher' - Image download and caching </br>
   'SVProgressHUD' - Loading View </br>
-  'SwiftSVG', '~> 2.0' - Used for svg images. </br>
+  'SwiftSVG' - Used for svg images. </br>
   'Hero' - Smooth animations for popular posts </br>
-  'CocoaDebug', :configurations => ['Debug'] - Check network calls in real time. </br>
+  'CocoaDebug' - Check network calls in real time. </br>
