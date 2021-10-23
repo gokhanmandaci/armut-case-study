@@ -1,2 +1,3 @@
-# armut-case-study
-Gökhan Mandacı Armut case study.
+# Armut - iOS Developer - Case Study
+### Gökhan Mandacı
+### 23 Oct 2021
