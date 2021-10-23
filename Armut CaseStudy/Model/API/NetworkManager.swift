@@ -9,9 +9,14 @@ import Foundation
 import Moya
 
 class NetworkManager {
-    /// Singleton instance
-    static let shared: NetworkManager = NetworkManager()
+    // MARK: - Parameters
+    // We can use MoyaProvider<CaseServices> for this project.
+    // But for common use like with multiple repos and protocols.
+    // I implemented it as MultiTarget. Mock test can be done now.
+    /// Moya Provider.
+    private let provider: MoyaProvider<MultiTarget>
     
+    /// Network error enum. Can be enhanced.
     enum NetworkError: Error {
         case badRequest
         case authState
@@ -20,6 +25,68 @@ class NetworkManager {
         case unexpectedError
     }
     
+    // MARK: - Init
+    init(provider: MoyaProvider<MultiTarget> = MoyaProvider<MultiTarget>()) {
+        self.provider = provider
+    }
+    
+    // Below two functions can be used under a generic requester
+    // in a real world app.
+    /// Get all services for home page.
+    /// - Parameter completionHandler: Returns Services or Error
+    func getAllServices(_ completionHandler: @escaping (Result<Services, Error>) -> Void) {
+        provider.request(MultiTarget(CaseServices.home)) { [weak self] result in
+            guard let strongSelf = self else { return }
+            switch result {
+            case .success(let response):
+                // Simply checks over 400 http response.
+                if response.statusCode > 400 {
+                    completionHandler(.failure(strongSelf.checkResponse(response)))
+                    return
+                }
+                let decoder = JSONDecoder()
+                do {
+                    let servicesResponse = try decoder.decode(Services.self, from: response.data)
+                    completionHandler(.success(servicesResponse))
+                } catch {
+                    let error = strongSelf.parsingError("Get All Services")
+                    completionHandler(.failure(error))
+                }
+            case .failure(let error):
+                completionHandler(.failure(error))
+            }
+        }
+    }
+    
+    /// Get a specific service with an id.
+    /// - Parameter completionHandler: Returns ServiceDetail or Error
+    func getServiceDetail(_ id: Int, _ completionHandler: @escaping (Result<ServiceDetail, Error>) -> Void) {
+        provider.request(MultiTarget(CaseServices.detail(id))) { [weak self] result in
+            guard let strongSelf = self else { return }
+            switch result {
+            case .success(let response):
+                // Simply checks over 400 http response.
+                if response.statusCode > 400 {
+                    completionHandler(.failure(strongSelf.checkResponse(response)))
+                    return
+                }
+                let decoder = JSONDecoder()
+                do {
+                    let serviceResponse = try decoder.decode(ServiceDetail.self, from: response.data)
+                    completionHandler(.success(serviceResponse))
+                } catch {
+                    let error = strongSelf.parsingError("Get Service Detail")
+                    completionHandler(.failure(error))
+                }
+            case .failure(let error):
+                completionHandler(.failure(error))
+            }
+        }
+    }
+}
+
+// MARK: - Helper Methods
+extension NetworkManager {
     /// Simple service error checker
     /// - Parameter response: Moya response
     /// - Returns: Related error type.

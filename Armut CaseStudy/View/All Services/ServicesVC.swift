@@ -46,7 +46,20 @@ class ServicesVC: UICollectionViewController {
 extension ServicesVC {
     /// Setup page layout, registrations of UI elements
     private func setup() {
+        registerNibs()
         let layout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 0,
+                                           left: leftAndRigthSpacing,
+                                           bottom: 0,
+                                           right: leftAndRigthSpacing)
+        layout.minimumLineSpacing = 10
+        layout.scrollDirection = .vertical
+        collectionView.collectionViewLayout = layout
+        collectionView.accessibilityIdentifier = "clvServices"
+    }
+    
+    /// Register necessary nibs
+    private func registerNibs() {
         /// Main header registration
         let nibHeader: UINib = UINib(nibName: Nibs.ServicesHeader, bundle: nil)
         collectionView!.register(nibHeader,
@@ -62,17 +75,9 @@ extension ServicesVC {
         let horizontalListItem = UINib(nibName: Nibs.HorizontalListView, bundle: nil)
         collectionView!.register(horizontalListItem,
                                  forCellWithReuseIdentifier: HorizontalList.reuseId)
-        
-        layout.sectionInset = UIEdgeInsets(top: 0,
-                                           left: leftAndRigthSpacing,
-                                           bottom: 0,
-                                           right: leftAndRigthSpacing)
-        layout.minimumLineSpacing = 10
-        layout.scrollDirection = .vertical
-        layout.shouldInvalidateLayout(forBoundsChange: .zero)
-        collectionView.collectionViewLayout = layout
     }
     
+    /// Navigates to service detail page
     private func showService(_ service: Service?, _ heroId: String? = nil) {
         guard let serviceDetail = UIStoryboard(name: Storyboards.ServiceDetail,
                                                bundle: nil)
@@ -95,7 +100,6 @@ extension ServicesVC: UICollectionViewDelegateFlowLayout {
         return servicesVM.services.count
     }
     
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let values = servicesVM.services[section].values.first {
             if section <= 1 {
@@ -117,6 +121,7 @@ extension ServicesVC: UICollectionViewDelegateFlowLayout {
                 if indexPath.section == 1 {
                     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: AllServicesItem.reuseId,
                                                                         for: indexPath) as? AllServicesItem else { return UICollectionViewCell() }
+                    cell.accessibilityIdentifier = "serviceCell\(indexPath.row)"
                     cell.setCell(serviceItem)
                     return cell
                 }
