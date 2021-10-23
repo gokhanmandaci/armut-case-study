@@ -18,6 +18,5 @@ class ServicesHeader: UICollectionReusableView {
         super.awakeFromNib()
         
         lblTitle.text = "Hizmet piş\nağzıma düş"
-        #warning("TODO: Fix auto layout warning in the console.")
     }
 }

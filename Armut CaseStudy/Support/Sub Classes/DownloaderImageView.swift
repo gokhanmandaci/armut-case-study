@@ -9,6 +9,10 @@ import Foundation
 import Kingfisher
 
 class DownloaderImageView: UIImageView {
+    /// Download the image with  a given url.
+    /// - Parameters:
+    ///   - urlString: Url string of the image resource.
+    ///   - placeholder: Placeholder for the image view if image cannot be downloaded.
     func dlImage(urlString: String?,
                    placeholder: UIImage? = nil) {
         

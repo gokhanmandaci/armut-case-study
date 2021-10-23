@@ -41,6 +41,9 @@
 		992A358D2722E5D2000D212D /* FooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 992A358C2722E5D2000D212D /* FooterView.xib */; };
 		992A358F2722E5F6000D212D /* FooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A358E2722E5F6000D212D /* FooterView.swift */; };
 		992A35922722F5B5000D212D /* UIApplicationExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A35912722F5B5000D212D /* UIApplicationExt.swift */; };
+		99B397072723847B00865167 /* Storyboards.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B397062723847B00865167 /* Storyboards.swift */; };
+		99B3970927238B1400865167 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3970827238B1400865167 /* Service.swift */; };
+		99B3970B27238B2100865167 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99B3970A27238B2100865167 /* Post.swift */; };
 		99C72C51272033BF00F901B0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C72C50272033BF00F901B0 /* AppDelegate.swift */; };
 		99C72C53272033BF00F901B0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C72C52272033BF00F901B0 /* SceneDelegate.swift */; };
 		99C72C58272033BF00F901B0 /* Services.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99C72C56272033BF00F901B0 /* Services.storyboard */; };
@@ -49,6 +52,8 @@
 		99C72C68272033C800F901B0 /* Armut_CaseStudyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C72C67272033C800F901B0 /* Armut_CaseStudyTests.swift */; };
 		99C72C72272033C800F901B0 /* Armut_CaseStudyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C72C71272033C800F901B0 /* Armut_CaseStudyUITests.swift */; };
 		99C72C74272033C800F901B0 /* Armut_CaseStudyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C72C73272033C800F901B0 /* Armut_CaseStudyUITestsLaunchTests.swift */; };
+		99EF074A27234C8D00BDA941 /* FailedRequestView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99EF074927234C8D00BDA941 /* FailedRequestView.storyboard */; };
+		99EF074C27234CFF00BDA941 /* FailedRequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99EF074B27234CFF00BDA941 /* FailedRequestVC.swift */; };
 		B565DC4D2C4E4B5DB838BB18 /* Pods_Armut_CaseStudy_Armut_CaseStudyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2CEC05C7D78A19429EE33C0 /* Pods_Armut_CaseStudy_Armut_CaseStudyUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +114,9 @@
 		992A358C2722E5D2000D212D /* FooterView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FooterView.xib; sourceTree = "<group>"; };
 		992A358E2722E5F6000D212D /* FooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterView.swift; sourceTree = "<group>"; };
 		992A35912722F5B5000D212D /* UIApplicationExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExt.swift; sourceTree = "<group>"; };
+		99B397062723847B00865167 /* Storyboards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboards.swift; sourceTree = "<group>"; };
+		99B3970827238B1400865167 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		99B3970A27238B2100865167 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		99C72C4D272033BF00F901B0 /* Armut CaseStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Armut CaseStudy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99C72C50272033BF00F901B0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99C72C52272033BF00F901B0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +129,8 @@
 		99C72C6D272033C800F901B0 /* Armut CaseStudyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Armut CaseStudyUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99C72C71272033C800F901B0 /* Armut_CaseStudyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Armut_CaseStudyUITests.swift; sourceTree = "<group>"; };
 		99C72C73272033C800F901B0 /* Armut_CaseStudyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Armut_CaseStudyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		99EF074927234C8D00BDA941 /* FailedRequestView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FailedRequestView.storyboard; sourceTree = "<group>"; };
+		99EF074B27234CFF00BDA941 /* FailedRequestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailedRequestVC.swift; sourceTree = "<group>"; };
 		BD4D741EB42494344A87F99E /* Pods-Armut CaseStudyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Armut CaseStudyTests.debug.xcconfig"; path = "Target Support Files/Pods-Armut CaseStudyTests/Pods-Armut CaseStudyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		F2CEC05C7D78A19429EE33C0 /* Pods_Armut_CaseStudy_Armut_CaseStudyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Armut_CaseStudy_Armut_CaseStudyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -200,10 +210,10 @@
 		992A354227203CC9000D212D /* Header */ = {
 			isa = PBXGroup;
 			children = (
+				992A35732720A4F1000D212D /* SectionFooter.swift */,
+				992A356127207A74000D212D /* SectionHeader.swift */,
 				992A3545272045B6000D212D /* ServicesHeader.swift */,
 				992A354327203DDE000D212D /* ServicesHeader.xib */,
-				992A356127207A74000D212D /* SectionHeader.swift */,
-				992A35732720A4F1000D212D /* SectionFooter.swift */,
 			);
 			path = Header;
 			sourceTree = "<group>";
@@ -211,6 +221,8 @@
 		992A354B272057C0000D212D /* API */ = {
 			isa = PBXGroup;
 			children = (
+				992A355227205994000D212D /* NetworkManager.swift */,
+				992A355027205883000D212D /* Endpoints.swift */,
 				992A354C272057DA000D212D /* CaseServices.swift */,
 			);
 			path = API;
@@ -221,6 +233,8 @@
 			children = (
 				992A353C27203A4F000D212D /* Services.swift */,
 				992A353E27203BD7000D212D /* ServiceDetail.swift */,
+				99B3970827238B1400865167 /* Service.swift */,
+				99B3970A27238B2100865167 /* Post.swift */,
 			);
 			path = "Response Models";
 			sourceTree = "<group>";
@@ -230,12 +244,12 @@
 			children = (
 				992A355D27206F24000D212D /* AllServicesItem.swift */,
 				992A355827206B14000D212D /* AllServicesItemView.xib */,
-				992A356727208DCA000D212D /* PopularItemView.xib */,
-				992A356927208DD7000D212D /* PopularItem.swift */,
-				992A356B2720999A000D212D /* HorizontalListView.xib */,
-				992A356D27209A15000D212D /* HorizontalList.swift */,
-				992A356F27209E6C000D212D /* BlogItemView.xib */,
 				992A357127209FDC000D212D /* BlogItem.swift */,
+				992A356F27209E6C000D212D /* BlogItemView.xib */,
+				992A356D27209A15000D212D /* HorizontalList.swift */,
+				992A356B2720999A000D212D /* HorizontalListView.xib */,
+				992A356927208DD7000D212D /* PopularItem.swift */,
+				992A356727208DCA000D212D /* PopularItemView.xib */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -326,6 +340,7 @@
 			children = (
 				99C72C59272033C800F901B0 /* Assets.xcassets */,
 				992A354927204FD1000D212D /* Nibs.swift */,
+				99B397062723847B00865167 /* Storyboards.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -347,6 +362,8 @@
 				992A354027203CB1000D212D /* All Services */,
 				992A354127203CBB000D212D /* Service Detail */,
 				99C72C5B272033C800F901B0 /* LaunchScreen.storyboard */,
+				99EF074927234C8D00BDA941 /* FailedRequestView.storyboard */,
+				99EF074B27234CFF00BDA941 /* FailedRequestVC.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -365,8 +382,6 @@
 			children = (
 				992A354B272057C0000D212D /* API */,
 				992A3554272059B6000D212D /* Response Models */,
-				992A355227205994000D212D /* NetworkManager.swift */,
-				992A355027205883000D212D /* Endpoints.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -497,6 +512,7 @@
 				992A35892722CD6A000D212D /* SpecTbV.xib in Resources */,
 				99C72C5D272033C800F901B0 /* LaunchScreen.storyboard in Resources */,
 				99C72C5A272033C800F901B0 /* Assets.xcassets in Resources */,
+				99EF074A27234C8D00BDA941 /* FailedRequestView.storyboard in Resources */,
 				99C72C58272033BF00F901B0 /* Services.storyboard in Resources */,
 				992A355927206B14000D212D /* AllServicesItemView.xib in Resources */,
 				992A357027209E6C000D212D /* BlogItemView.xib in Resources */,
@@ -654,16 +670,20 @@
 				992A35602720715E000D212D /* Helper.swift in Sources */,
 				992A354F2720583A000D212D /* AppConstants.swift in Sources */,
 				992A3546272045B6000D212D /* ServicesHeader.swift in Sources */,
+				99B3970B27238B2100865167 /* Post.swift in Sources */,
 				992A353D27203A4F000D212D /* Services.swift in Sources */,
 				992A355327205994000D212D /* NetworkManager.swift in Sources */,
 				992A355E27206F24000D212D /* AllServicesItem.swift in Sources */,
+				99B3970927238B1400865167 /* Service.swift in Sources */,
 				992A356E27209A15000D212D /* HorizontalList.swift in Sources */,
 				992A355127205883000D212D /* Endpoints.swift in Sources */,
 				992A354A27204FD1000D212D /* Nibs.swift in Sources */,
 				99C72C51272033BF00F901B0 /* AppDelegate.swift in Sources */,
 				992A354D272057DA000D212D /* CaseServices.swift in Sources */,
 				992A35742720A4F1000D212D /* SectionFooter.swift in Sources */,
+				99EF074C27234CFF00BDA941 /* FailedRequestVC.swift in Sources */,
 				992A356227207A75000D212D /* SectionHeader.swift in Sources */,
+				99B397072723847B00865167 /* Storyboards.swift in Sources */,
 				992A354827204668000D212D /* ServicesVC.swift in Sources */,
 				992A3587272214AD000D212D /* ServiceDetailVC.swift in Sources */,
 				992A356A27208DD7000D212D /* PopularItem.swift in Sources */,
@@ -859,6 +879,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -889,6 +910,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

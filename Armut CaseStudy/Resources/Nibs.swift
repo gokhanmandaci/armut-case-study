@@ -7,6 +7,7 @@
 
 import Foundation
 
+// MARK: - Nibs
 struct Nibs {
     static let ServicesHeader = "ServicesHeader"
     static let AllServicesItemView = "AllServicesItemView"

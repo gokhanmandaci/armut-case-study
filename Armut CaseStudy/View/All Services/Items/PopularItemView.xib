@@ -3,6 +3,7 @@
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,7 +19,7 @@
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s3T-RL-f8M" customClass="DownloaderImageView" customModule="Armut_CaseStudy" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="90"/>
-                        <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="s3T-RL-f8M" secondAttribute="height" multiplier="5:3" id="Hfq-vD-d9d"/>
                         </constraints>
@@ -38,6 +39,7 @@
                         </variation>
                     </label>
                 </subviews>
+                <color key="backgroundColor" name="Background Color"/>
                 <constraints>
                     <constraint firstItem="TcC-xz-dtH" firstAttribute="top" secondItem="s3T-RL-f8M" secondAttribute="bottom" constant="8" id="Kol-eJ-f9J"/>
                     <constraint firstAttribute="trailing" secondItem="s3T-RL-f8M" secondAttribute="trailing" id="XLg-RN-H46"/>
@@ -55,4 +57,9 @@
             <point key="canvasLocation" x="340.4296875" y="105.63689604685212"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <namedColor name="Background Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

@@ -13,6 +13,8 @@ import Hero
 class ServicesVC: UICollectionViewController {
     // MARK: - Parameters
     private let servicesVM = ServicesVM()
+    private let headerHeightMultiplier = 1.8
+    private let leftAndRigthSpacing: CGFloat = 20
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,16 +63,20 @@ extension ServicesVC {
         collectionView!.register(horizontalListItem,
                                  forCellWithReuseIdentifier: HorizontalList.reuseId)
         
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
+        layout.sectionInset = UIEdgeInsets(top: 0,
+                                           left: leftAndRigthSpacing,
+                                           bottom: 0,
+                                           right: leftAndRigthSpacing)
         layout.minimumLineSpacing = 10
         layout.scrollDirection = .vertical
+        layout.shouldInvalidateLayout(forBoundsChange: .zero)
         collectionView.collectionViewLayout = layout
     }
     
     private func showService(_ service: Service?, _ heroId: String? = nil) {
-        guard let serviceDetail = UIStoryboard(name: "ServiceDetail",
+        guard let serviceDetail = UIStoryboard(name: Storyboards.ServiceDetail,
                                                bundle: nil)
-                .instantiateViewController(withIdentifier: "ServiceDetail2StrId") as? ServiceDetailVC else { return }
+                .instantiateViewController(withIdentifier: ServiceDetailVC.strId) as? ServiceDetailVC else { return }
         serviceDetail.service = service
         serviceDetail.heroId = heroId
         if heroId == nil {
@@ -150,10 +156,13 @@ extension ServicesVC: UICollectionViewDelegateFlowLayout {
             let dimen = (Helper.getWidth() - ((3 * 10) + (2 * 20))) / divider
             return CGSize(width: dimen, height: dimen)
         } else {
+            /// 40 is left 20 and right 20 with this way we handle inner collection view invalid sizes.
+            /// Section insets will be inherited. Also has an effect on scroll performance.
+            let width = collectionView.frame.width - leftAndRigthSpacing * 2
             if indexPath.section == 2 {
-                return CGSize(width: Helper.getWidth(), height: popularHeight)
+                return CGSize(width: width, height: popularHeight)
             } else {
-                return CGSize(width: Helper.getWidth(), height: blogHeight)
+                return CGSize(width: width, height: blogHeight)
             }
         }
     }
@@ -199,22 +208,8 @@ extension ServicesVC: UICollectionViewDelegateFlowLayout {
     
     // MARK: - UICollectionView Flow Layout Methods
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        // This will be our header view
         if section == 0 {
-            /// Header index path
-            let indexPath = IndexPath(row: 0, section: section)
-            /// We get the header item.
-            let servicesHeader = self.collectionView(collectionView,
-                                                     viewForSupplementaryElementOfKind: UICollectionView.elementKindSectionHeader,
-                                                     at: indexPath)
-            
-            // Here with systemLayoutSizeFitting our header size will be dynamic
-            // because we used auto-layout and bind the boundaries.
-            return servicesHeader.systemLayoutSizeFitting(CGSize(width: collectionView.frame.width,
-                                                                 height: UIView.layoutFittingExpandedSize.height
-                                                                ),
-                                                          withHorizontalFittingPriority: .required,
-                                                          verticalFittingPriority: .fittingSizeLevel)
+            return CGSize(width: Helper.getWidth(), height: Helper.getWidth() * headerHeightMultiplier)
         } else if section == 1 {
             return CGSize(width: Helper.getWidth(), height: 50)
         } else {
@@ -244,6 +239,12 @@ extension ServicesVC: ServicesDelegate {
         SVProgressHUD.dismiss()
         if let error = error {
             print(error.localizedDescription)
+            print(error.localizedDescription)
+            guard let failedView = UIStoryboard(name: Storyboards.FailedRequestView, bundle: nil)
+                .instantiateViewController(withIdentifier: FailedRequestVC.strId) as? FailedRequestVC else { return }
+            failedView.modalPresentationStyle = .overCurrentContext
+            failedView.delegate = self
+            present(failedView, animated: false)
         } else {
             collectionView!.reloadData()
         }
@@ -266,5 +267,12 @@ extension ServicesVC: HorizontalListDelegate {
             vc.modalPresentationStyle = .formSheet
             present(vc, animated: true)
         }
+    }
+}
+
+// MARK: - Failed Requests View Methods
+extension ServicesVC: FailedRequestsDelegate {
+    func retry() {
+        servicesVM.fetch()
     }
 }

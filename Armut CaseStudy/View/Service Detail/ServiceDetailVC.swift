@@ -22,8 +22,10 @@ class ServiceDetailVC: UIViewController {
     /// Sets max pull value for tableview
     private let maxPullTreshold: CGFloat = 80
     private let serviceDetailVM = ServiceDetailVM()
+    private var navBarColor: UIColor = .white
     var service: Service?
     var heroId: String?
+    static let strId = "ServiceDetailStrId"
     
     // MARK: - Outlets
     @IBOutlet weak var tbvService: UITableView!
@@ -31,12 +33,27 @@ class ServiceDetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        if traitCollection.userInterfaceStyle == .dark {
+            navBarColor = UIColor(red: 31 / 255,
+                                  green: 31 / 255,
+                                  blue: 31 / 255,
+                                  alpha: 0.3)
+        }
+        
         setupLayout()
         let specNib = UINib(nibName: Nibs.SpecTbV, bundle: nil)
         tbvService.register(specNib, forCellReuseIdentifier: SpecTbVC.reuseId)
         tbvService.estimatedRowHeight = 60
         tbvService.rowHeight = UITableView.automaticDimension
+        
+        if let service = service {
+            serviceDetailVM.delegate = self
+            serviceDetailVM.getService(with: service.id)
+        }
     }
+    
+    // MARK: - Actions
+    @IBAction func btnContinueAction(_ sender: Any) {}
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -46,11 +63,6 @@ class ServiceDetailVC: UIViewController {
             appearance.shadowColor = UIColor.clear
             appearance.shadowImage = nil
             setAppearance()
-        }
-        
-        if let service = service {
-            serviceDetailVM.delegate = self
-            serviceDetailVM.getService(with: service.id)
         }
         
         if let heroId = heroId {
@@ -70,11 +82,11 @@ extension ServiceDetailVC {
             let navBarAlpha: CGFloat = 1 - labelAlpha
             lblName.alpha = labelAlpha
             appearance.titleTextAttributes = [.foregroundColor: UIColor.green.withAlphaComponent(navBarAlpha)]
-            appearance.backgroundColor = .white.withAlphaComponent(navBarAlpha)
+            appearance.backgroundColor = navBarColor.withAlphaComponent(navBarAlpha)
         } else {
             lblName.alpha = 1.0
             appearance.titleTextAttributes = [.foregroundColor: UIColor.green.withAlphaComponent(0.0)]
-            appearance.backgroundColor = .white.withAlphaComponent(0.0)
+            appearance.backgroundColor = navBarColor.withAlphaComponent(0.0)
         }
         navigationController?.navigationBar.standardAppearance = appearance
         navigationController?.navigationBar.scrollEdgeAppearance = appearance
@@ -86,7 +98,7 @@ extension ServiceDetailVC {
         headerImageHeight = Helper.getWidth() * headerImageHeightMultiplier
         topHeight = (navBarHeight! + statusBarHeight)
         // Subtract navigation bar height. We want our image located right
-        // under the top view. +20 is the padding.
+        // under the top view.
         let offSet = headerImageHeight - topHeight
         tbvService.contentInset = UIEdgeInsets(top: offSet - 1, left: 0, bottom: 0, right: 0)
         navigationItem.title = service?.name ?? ""
@@ -103,8 +115,7 @@ extension ServiceDetailVC {
         lblName.sizeToFit()
         lblName.translatesAutoresizingMaskIntoConstraints = false
         let leftAnchor = lblName.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20)
-        let rightAnchor = lblName.leftAnchor.constraint(equalTo: view.rightAnchor, constant: 20)
-        let widthAnchor = lblName.widthAnchor.constraint(equalToConstant: Helper.getWidth() - 40)
+        let rightAnchor = lblName.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20)
         let bottomAnchor = lblName.bottomAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -20)
         
         lblName.textColor = UIColor.white
@@ -119,8 +130,7 @@ extension ServiceDetailVC {
         imageView.addSubview(gradientView)
         imageView.addSubview(lblName)
         
-        view.addConstraints([leftAnchor, rightAnchor, widthAnchor, bottomAnchor])
-        view.layoutIfNeeded()
+        view.addConstraints([leftAnchor, rightAnchor, bottomAnchor])
     }
 }
 
@@ -152,7 +162,7 @@ extension ServiceDetailVC: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        var dimen: CGFloat = 50
+        var dimen: CGFloat = 500
         if UIDevice.current.userInterfaceIdiom == .pad {
             dimen = 700
         }
@@ -180,10 +190,24 @@ extension ServiceDetailVC: ServiceDetailDelegate {
     func fetched(_ error: Error?) {
         if let error = error {
             print(error.localizedDescription)
+            guard let failedView = UIStoryboard(name: Storyboards.FailedRequestView, bundle: nil)
+                .instantiateViewController(withIdentifier: FailedRequestVC.strId) as? FailedRequestVC else { return }
+            failedView.modalPresentationStyle = .overCurrentContext
+            failedView.delegate = self
+            present(failedView, animated: false)
         } else {
             navigationItem.title = serviceDetailVM.serviceDetail?.name ?? ""
             lblName.text = serviceDetailVM.serviceDetail?.longName ?? ""
             tbvService.reloadData()
+        }
+    }
+}
+
+// MARK: - Failed Requests View Methods
+extension ServiceDetailVC: FailedRequestsDelegate {
+    func retry() {
+        if let service = service {
+            serviceDetailVM.getService(with: service.id)
         }
     }
 }

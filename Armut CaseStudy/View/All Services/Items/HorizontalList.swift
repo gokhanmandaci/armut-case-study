@@ -19,7 +19,6 @@ class HorizontalList: UICollectionViewCell {
     static let reuseId = "horizontalListViewReuseId"
     var populars: [Service]?
     var posts: [Post]?
-    private let layout = UICollectionViewFlowLayout()
     var delegate: HorizontalListDelegate?
     
     // MARK: - Outlets
@@ -39,9 +38,10 @@ class HorizontalList: UICollectionViewCell {
         clvList.register(blogItem,
                          forCellWithReuseIdentifier: BlogItem.reuseId)
         
+        let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
         layout.minimumLineSpacing = 10
+        clvList.collectionViewLayout = layout
         
         contentView.backgroundColor = .clear
         
@@ -53,14 +53,6 @@ extension HorizontalList {
     func setCell(for populars: [Service]) {
         if self.populars == nil {
             self.populars = populars
-            var width: CGFloat = 150
-            var height: CGFloat = 140
-            if UIDevice.current.userInterfaceIdiom == .pad {
-                width = 200
-                height = 190
-            }
-            layout.itemSize = CGSize(width: width, height: height)
-            clvList.collectionViewLayout = layout
             clvList.reloadData()
         }
     }
@@ -68,21 +60,13 @@ extension HorizontalList {
     func setCell(for posts: [Post]) {
         if self.posts == nil {
             self.posts = posts
-            var width: CGFloat = 150
-            var height: CGFloat = 200
-            if UIDevice.current.userInterfaceIdiom == .pad {
-                width = 200
-                height = 250
-            }
-            layout.itemSize = CGSize(width: width, height: height)
-            clvList.collectionViewLayout = layout
             clvList.reloadData()
         }
     }
 }
 
 // MARK: - UICollectionView Methods
-extension HorizontalList: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HorizontalList: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let popularCount = populars?.count {
             return popularCount
@@ -163,6 +147,27 @@ extension HorizontalList: UICollectionViewDelegate, UICollectionViewDataSource {
                     cell.contentView.backgroundColor = .clear
                 }
             }
+        }
+    }
+    
+    // MARK: - UICollectionView Delegate Flow Layout Methods
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if self.populars != nil {
+            var width: CGFloat = 150
+            var height: CGFloat = 140
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                width = 200
+                height = 190
+            }
+            return CGSize(width: width, height: height)
+        } else {
+            var width: CGFloat = 150
+            var height: CGFloat = 200
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                width = 200
+                height = 250
+            }
+            return CGSize(width: width, height: height)
         }
     }
 }

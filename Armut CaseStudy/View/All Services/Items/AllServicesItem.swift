@@ -27,7 +27,6 @@ extension AllServicesItem {
             let serviceImage = UIImageView()
             serviceImage.image = UIImage(named: "\(service.id)")
             serviceImage.contentMode = .scaleAspectFill
-            // UIView(SVGNamed: "\(service.id)")
             serviceImage.translatesAutoresizingMaskIntoConstraints = false
             serviceImage.widthAnchor.constraint(equalToConstant: dimen).isActive = true
             serviceImage.heightAnchor.constraint(equalToConstant: dimen).isActive = true

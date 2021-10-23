@@ -13,6 +13,7 @@ import UIKit
 /// to make UIView handle the animation operation for us.
 /// Reference: https://stackoverflow.com/a/17558724
 /// I'm using this old technique in my other apps also.
+/// CALayer operation helps scroll view performance.
 class GradientView: UIView {
     // MARK: - Initializers
     override init(frame: CGRect) {
@@ -41,6 +42,9 @@ class GradientView: UIView {
         gradientLayer.startPoint = CGPoint(x: 0.0, y: 0.0)
         gradientLayer.endPoint = CGPoint(x: 0.0, y: 1.0)
         gradientLayer.frame = self.bounds
+        // Should Rasterize true added because of
+        // the animation used in detail page.
+        // Expecting a better performance.
         gradientLayer.shouldRasterize = true
     }
 

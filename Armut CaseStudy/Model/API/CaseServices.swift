@@ -13,6 +13,7 @@ enum CaseServices {
     case detail(_ id: Int)
 }
 
+/// Main service abstraction. Can be used as multiple repos.
 extension CaseServices: TargetType {
     var baseURL: URL {
         return URL(string: AppConstants.shared.root)!

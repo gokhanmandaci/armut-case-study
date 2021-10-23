@@ -22,6 +22,13 @@ class PopularItem: UICollectionViewCell {
         contentView.clipsToBounds = true
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        imgService.image = nil
+        lblServiceName.text = ""
+    }
+    
 }
 
 // MARK: - Methods
