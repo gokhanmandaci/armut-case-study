@@ -48,13 +48,7 @@ class ServiceDetailVC: UIViewController {
     }
     
     // MARK: - Actions
-    @IBAction func btnContinueAction(_ sender: Any) {
-        guard let failedView = UIStoryboard(name: Storyboards.FailedRequestView, bundle: nil)
-            .instantiateViewController(withIdentifier: FailedRequestVC.strId) as? FailedRequestVC else { return }
-        failedView.modalPresentationStyle = .overCurrentContext
-        failedView.delegate = self
-        present(failedView, animated: false)
-    }
+    @IBAction func btnContinueAction(_ sender: Any) {}
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -122,7 +116,6 @@ extension ServiceDetailVC {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.dlImage(urlString: service?.imageURL)
-        let imgRightAnchor = imageView.rightAnchor.constraint(equalTo: view.rightAnchor)
         view.addSubview(imageView)
         
         lblName.frame = .zero
@@ -143,7 +136,7 @@ extension ServiceDetailVC {
         gradientView.frame = imageView.frame
         imageView.addSubview(gradientView)
         imageView.addSubview(lblName)
-        view.addConstraints([leftAnchor, rightAnchor, bottomAnchor, imgRightAnchor])
+        view.addConstraints([leftAnchor, rightAnchor, bottomAnchor])
     }
     
     private func setSizeDependentElements() {
