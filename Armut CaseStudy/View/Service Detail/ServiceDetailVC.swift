@@ -86,8 +86,8 @@ extension ServiceDetailVC {
                                   alpha: 0.3)
         }
         
-        setupLayout()
         setSizeDependentElements()
+        setupLayout()
         
         let specNib = UINib(nibName: Nibs.SpecTbV, bundle: nil)
         tbvService.register(specNib, forCellReuseIdentifier: SpecTbVC.reuseId)
@@ -122,6 +122,7 @@ extension ServiceDetailVC {
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         imageView.dlImage(urlString: service?.imageURL)
+        let imgRightAnchor = imageView.rightAnchor.constraint(equalTo: view.rightAnchor)
         view.addSubview(imageView)
         
         lblName.frame = .zero
@@ -142,7 +143,7 @@ extension ServiceDetailVC {
         gradientView.frame = imageView.frame
         imageView.addSubview(gradientView)
         imageView.addSubview(lblName)
-        view.addConstraints([leftAnchor, rightAnchor, bottomAnchor])
+        view.addConstraints([leftAnchor, rightAnchor, bottomAnchor, imgRightAnchor])
     }
     
     private func setSizeDependentElements() {
