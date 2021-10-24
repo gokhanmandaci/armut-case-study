@@ -15,18 +15,8 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="QoM-pK-HXW">
-                                <rect key="frame" x="177.66666666666666" y="396" width="20" height="20"/>
-                                <color key="color" name="Component Color"/>
-                            </activityIndicatorView>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="Background Color"/>
-                        <constraints>
-                            <constraint firstItem="QoM-pK-HXW" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="M9D-tx-mjz"/>
-                            <constraint firstItem="QoM-pK-HXW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="WK9-e7-9SI"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -37,9 +27,6 @@
     <resources>
         <namedColor name="Background Color">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="Component Color">
-            <color red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="0.29499998688697815" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

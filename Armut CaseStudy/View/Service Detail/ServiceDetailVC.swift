@@ -48,13 +48,7 @@ class ServiceDetailVC: UIViewController {
     }
     
     // MARK: - Actions
-    @IBAction func btnContinueAction(_ sender: Any) {
-        guard let failedView = UIStoryboard(name: Storyboards.FailedRequestView, bundle: nil)
-            .instantiateViewController(withIdentifier: FailedRequestVC.strId) as? FailedRequestVC else { return }
-        failedView.modalPresentationStyle = .overCurrentContext
-        failedView.delegate = self
-        present(failedView, animated: false)
-    }
+    @IBAction func btnContinueAction(_ sender: Any) {}
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -86,8 +80,8 @@ extension ServiceDetailVC {
                                   alpha: 0.3)
         }
         
-        setupLayout()
         setSizeDependentElements()
+        setupLayout()
         
         let specNib = UINib(nibName: Nibs.SpecTbV, bundle: nil)
         tbvService.register(specNib, forCellReuseIdentifier: SpecTbVC.reuseId)
