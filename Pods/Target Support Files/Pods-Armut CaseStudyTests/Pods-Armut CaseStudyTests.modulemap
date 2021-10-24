@@ -1,0 +1,6 @@
+framework module Pods_Armut_CaseStudyTests {
+  umbrella header "Pods-Armut CaseStudyTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

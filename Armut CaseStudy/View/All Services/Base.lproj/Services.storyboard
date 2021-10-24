@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tmi-Pz-Y4q">
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--ServicesVC-->
+        <scene sceneID="9Ix-Cc-AFk">
+            <objects>
+                <collectionViewController id="vDA-cv-bGl" customClass="ServicesVC" customModule="Armut_CaseStudy" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="kYZ-zG-t3B">
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" name="Background Color"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GJW-EN-QSy">
+                            <size key="itemSize" width="128" height="128"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="50" height="50"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells/>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="sectionHeaderReuseId" id="2tm-K8-0R1" customClass="SectionHeader" customModule="Armut_CaseStudy" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="428" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="All services bbbb" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugS-cl-cXL">
+                                    <rect key="frame" x="20" y="17" width="119" height="17"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                    <color key="textColor" name="Default Text Color"/>
+                                    <nil key="highlightedColor"/>
+                                    <variation key="heightClass=regular-widthClass=regular">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                    </variation>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottomMargin" secondItem="ugS-cl-cXL" secondAttribute="bottom" constant="8" id="Rhm-zg-eNn"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ugS-cl-cXL" secondAttribute="trailing" constant="20" id="rRC-YY-sFh"/>
+                                <constraint firstItem="ugS-cl-cXL" firstAttribute="leading" secondItem="2tm-K8-0R1" secondAttribute="leading" constant="20" id="w2e-cm-PyH"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="lblTitle" destination="ugS-cl-cXL" id="rRc-fy-dWa"/>
+                            </connections>
+                        </collectionReusableView>
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="sectionFooterReuseId" id="lGF-Da-m3g" customClass="SectionFooter" customModule="Armut_CaseStudy" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="50" width="428" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="vDA-cv-bGl" id="4JB-rE-Tg3"/>
+                            <outlet property="delegate" destination="vDA-cv-bGl" id="hBf-Lp-iZS"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="Ial-z0-leH">
+                        <barButtonItem key="backBarButtonItem" title="      " id="5gR-TX-PsR"/>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uce-lk-k2j" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="923.1884057971015" y="182.8125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="5Vz-uq-khj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Tmi-Pz-Y4q" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="4g6-7F-9EZ">
+                        <rect key="frame" x="0.0" y="44" width="428" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" name="Default Text Color"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vDA-cv-bGl" kind="relationship" relationship="rootViewController" id="Ziw-Fx-Yle"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r5R-dQ-ui0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13.043478260869566" y="182.8125"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Background Color">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Default Text Color">
+            <color red="0.1289999932050705" green="0.1289999932050705" blue="0.1289999932050705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
